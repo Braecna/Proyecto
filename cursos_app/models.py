@@ -32,3 +32,12 @@ class contenido_curso(models.Model):
     curso = models.ForeignKey(curso, on_delete=models.CASCADE, db_column='n_curso')
     titulo = models.CharField(max_length=100, null=False) 
     descripcion = models.TextField(null=False)
+
+class pais(models.Model):
+    pais_id= models.AutoField(primary_key=True)
+    nombre_pais = models.CharField(max_length=100, null=False)
+
+class Idioma(models.Model):
+    idioma_id= models.AutoField(primary_key=True)
+    nombre_idioma = models.CharField(max_length=100, null=False)
+
