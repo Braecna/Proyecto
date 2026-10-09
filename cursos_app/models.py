@@ -41,3 +41,9 @@ class Idioma(models.Model):
     idioma_id= models.AutoField(primary_key=True)
     nombre_idioma = models.CharField(max_length=100, null=False)
 
+class clientes(models.Model):
+    cliente_id= models.AutoField(primary_key=True)
+    direccion = models.CharField(max_length=100, null=False)
+    numero_domicilio = models.CharField(max_length=20, null=False)
+    pais = models.ForeignKey(pais, on_delete=models.CASCADE)
+    telefono = models.CharField(max_length=20, null=False)

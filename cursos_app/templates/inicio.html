@@ -1,326 +1,1559 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EduFlow Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "tertiary-fixed-dim": "#ffb59a",
-                        "secondary-fixed": "#d8e2ff",
-                        "inverse-on-surface": "#eff1f3",
-                        "on-tertiary-fixed": "#380d00",
-                        "on-surface": "#191c1e",
-                        "primary-container": "#1e40af",
-                        "secondary-container": "#2170e4",
-                        "secondary": "#0058be",
-                        "surface-variant": "#e0e3e5",
-                        "surface": "#f7f9fb",
-                        "surface-dim": "#d8dadc",
-                        "error": "#ba1a1a",
-                        "on-background": "#191c1e",
-                        "surface-bright": "#f7f9fb",
-                        "on-surface-variant": "#444653",
-                        "on-primary-fixed-variant": "#173bab",
-                        "surface-container-highest": "#e0e3e5",
-                        "surface-container-high": "#e6e8ea",
-                        "outline-variant": "#c4c5d5",
-                        "on-primary-fixed": "#001453",
-                        "primary-fixed-dim": "#b8c4ff",
-                        "background": "#f7f9fb",
-                        "on-secondary": "#ffffff",
-                        "tertiary": "#611e00",
-                        "inverse-surface": "#2d3133",
-                        "surface-container-low": "#f2f4f6",
-                        "on-primary": "#ffffff",
-                        "primary-fixed": "#dde1ff",
-                        "on-tertiary": "#ffffff",
-                        "on-tertiary-fixed-variant": "#802a00",
-                        "primary": "#00288e",
-                        "error-container": "#ffdad6",
-                        "outline": "#757684",
-                        "tertiary-container": "#872d00",
-                        "on-secondary-container": "#fefcff",
-                        "surface-tint": "#3755c3",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary-fixed-dim": "#adc6ff",
-                        "on-error-container": "#93000a",
-                        "on-secondary-fixed": "#001a42",
-                        "on-secondary-fixed-variant": "#004395",
-                        "on-error": "#ffffff",
-                        "on-tertiary-container": "#ffa583",
-                        "inverse-primary": "#b8c4ff",
-                        "on-primary-container": "#a8b8ff",
-                        "tertiary-fixed": "#ffdbce",
-                        "surface-container": "#eceef0"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "stack-md": "16px",
-                        "unit": "4px",
-                        "stack-sm": "8px",
-                        "margin-desktop": "40px",
-                        "container-max": "1280px",
-                        "margin-mobile": "16px",
-                        "stack-lg": "32px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "display-lg-mobile": ["Inter"],
-                        "display-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "headline-sm": ["Inter"],
-                        "label-md": ["Inter"],
-                        "body-sm": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "headline-md": ["Inter"]
-                    },
-                    "fontSize": {
-                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
-                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
-                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
-                    }
-                },
-            },
-        }
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
-        /* Component specific styles derived from Design System */
-        .btn-primary { @apply bg-primary text-on-primary py-[12px] px-[24px] rounded-lg font-label-md text-label-md transition-colors hover:bg-primary-container hover:text-on-primary-container; }
-        .btn-secondary { @apply border border-outline text-on-surface py-[12px] px-[24px] rounded-lg font-label-md text-label-md transition-colors hover:bg-surface-variant; }
-        .course-card { @apply bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-1; box-shadow: 0px 2px 4px rgba(0,0,0,0.05); }
-        .course-card:hover { box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1); }
-        .badge { @apply bg-primary-container text-on-primary-container px-2 py-1 rounded-full font-label-sm text-label-sm inline-flex items-center gap-1; }
-    </style>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-dim": "#d8dadc", "on-tertiary-container": "#ffa583", "tertiary-container": "#872d00", "on-primary-fixed-variant": "#173bab", "tertiary": "#611e00", "inverse-surface": "#2d3133", "surface-container-low": "#f2f4f6", "surface-base": "#F8FAFC", "feedback-success": "#15803D", "text-muted": "#444653", "surface-card": "#FFFFFF", "primary": "#00288e", "on-tertiary": "#ffffff", "on-secondary-fixed": "#001a42", "surface-tint": "#3755c3", "on-surface": "#191c1e", "on-background": "#191c1e", "tertiary-fixed": "#ffdbce", "on-primary": "#ffffff", "primary-fixed-dim": "#b8c4ff", "surface-bright": "#f7f9fb", "primary-fixed": "#dde1ff", "feedback-error": "#BA1A1A", "error-container": "#ffdad6", "on-secondary-container": "#fefcff", "text-primary": "#191C1E", "inverse-primary": "#b8c4ff", "surface-variant": "#e0e3e5", "secondary": "#0058be", "border-subtle": "#E2E8F0", "on-error-container": "#93000a", "surface": "#f7f9fb", "secondary-fixed": "#d8e2ff", "inverse-on-surface": "#eff1f3", "background": "#f7f9fb", "on-primary-container": "#a8b8ff", "on-tertiary-fixed": "#370e00", "tertiary-fixed-dim": "#ffb59a", "primary-container": "#1e40af", "on-primary-fixed": "#001453", "surface-container-lowest": "#ffffff", "outline": "#757684", "secondary-container": "#2170e4", "on-secondary-fixed-variant": "#004395", "error": "#ba1a1a", "outline-variant": "#c4c5d5", "secondary-fixed-dim": "#adc6ff", "surface-container": "#eceef0", "on-error": "#ffffff", "surface-container-highest": "#e0e3e5", "on-secondary": "#ffffff", "surface-container-high": "#e6e8ea", "on-tertiary-fixed-variant": "#802a00", "on-surface-variant": "#444653", "feedback-warning": "#B45309" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-lg": "1.5rem", "margin-mobile": "1rem", "margin": "2.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xl": "2rem", "space-md": "1rem" }, fontFamily: { "label-sm": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "display-lg": ["Inter"], "label-md": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script>
 </head>
-<body class="text-on-surface min-h-screen flex flex-col">
-<!-- TopNavBar -->
-<header class="bg-surface-container-lowest dark:bg-inverse-surface text-primary dark:text-inverse-primary font-body-md text-body-md docked full-width top-0 border-b border-outline-variant dark:border-outline shadow-sm flex justify-between items-center px-margin-desktop py-4 w-full max-w-container-max mx-auto z-50 sticky">
-<div class="flex items-center gap-8">
-<a class="font-headline-md text-headline-md text-primary dark:text-inverse-primary font-bold" href="#">EduFlow</a>
-<!-- Desktop Nav -->
-<nav class="hidden md:flex gap-6">
-<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary py-1" href="#">Courses</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 ease-in-out py-1" href="#">About Us</a>
-<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 ease-in-out py-1" href="#">Support</a>
-</nav>
-</div>
-<div class="flex items-center gap-4">
-<!-- Search Icon (Mobile) -->
-<button class="md:hidden p-2 text-on-surface-variant"><span class="material-symbols-outlined">search</span></button>
-<!-- User Avatar & Badge -->
-<div class="hidden sm:flex items-center gap-3">
-<div class="badge">Level 5</div>
-<img alt="User profile with course level badge" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a diverse user in a clean, brightly lit modern corporate setting, exuding competence and approachability. The image fits perfectly in a small circular avatar frame, minimalist and clear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT0Q_IAW69UrgJo9of3kW4Z3QZUAAr3csDr6w4bvhYem_RuiyuuXJmaA6j8FToMKZlt_2Pn2XMCBOfygWThZXGeK10PMClzK--6oXootfxJYdS28qePPLfwdqPm_gb4TZrt-G376DnfNyOW80QZjkDpl_EmyiCdwVBl7cx3Vgq46AEnVCY5qD-QnGmMTa4vxvth9V_bnabvCiWGcZl5eVvH3rruol1Zf2Y_0Cc4tKMzt3CVnZezPo-Dw"/>
-</div>
-<!-- Actions -->
-<button class="btn-secondary hidden lg:block">Login</button>
-<button class="btn-primary">Get Started</button>
-</div>
-</header>
-<!-- Main Layout Grid -->
-<div class="flex-1 w-full max-w-container-max mx-auto flex flex-col md:flex-row overflow-hidden">
-<!-- Left SideNavBar - Categories -->
-<aside class="bg-surface dark:bg-surface-dim font-label-md text-label-md docked left-0 h-full w-64 bg-surface-container-low dark:bg-inverse-surface flat no shadows hidden lg:flex flex-col border-r border-outline-variant dark:border-outline py-6 flex-shrink-0 z-40 sticky top-[73px]" style="height: calc(100vh - 73px);">
-<div class="px-6 mb-8">
-<h2 class="font-headline-sm text-headline-sm text-primary mb-1">Categories</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Explore Topics</p>
-</div>
-<nav class="flex flex-col flex-1 overflow-y-auto">
-<a class="flex items-center gap-4 px-6 py-4 text-primary dark:text-inverse-primary font-bold border-r-4 border-primary bg-surface-variant/50" href="#">
-<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">code</span>
-                    Development
-                </a>
-<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-all duration-150" href="#">
-<span class="material-symbols-outlined">payments</span>
-                    Business
-                </a>
-<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-all duration-150" href="#">
-<span class="material-symbols-outlined">palette</span>
-                    Design
-                </a>
-<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-all duration-150" href="#">
-<span class="material-symbols-outlined">trending_up</span>
-                    Marketing
-                </a>
-<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-all duration-150" href="#">
-<span class="material-symbols-outlined">fitness_center</span>
-                    Health
-                </a>
-</nav>
-</aside>
-<!-- Central Canvas - Courses -->
-<main class="flex-1 p-margin-mobile md:p-gutter lg:p-margin-desktop overflow-y-auto w-full">
-<header class="mb-8 flex justify-between items-end">
-<div>
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">Featured Courses</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Level up your skills with our top-rated content.</p>
-</div>
-<!-- Search bar acting as a filter in central canvas for cognitive focus -->
-<div class="hidden md:flex relative w-64">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary text-body-sm font-body-sm text-on-surface transition-all" placeholder="Search courses..." type="text"/>
-</div>
-</header>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Course Card 1 -->
-<article class="course-card flex flex-col h-full">
-<div class="relative h-48 w-full bg-surface-container">
-<img alt="Course Thumbnail" class="w-full h-full object-cover" data-alt="A clean, abstract 3D rendering of the React logo composed of glowing blue spheres and subtle translucent rings against a light, minimalist studio background. The lighting is soft and professional, evoking a high-tech modern educational vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByiiEh1nltR7Dw4bdeHnuJTwHh8XVvL7zb6Ydo1sEjNFXFC3lyCtEj6td-pYYzM8dQEEOP2Hd4v_UtBGb5mbsSSYX1nLe-EdcbzI2h0V9QqR96ATbVoHryMYPKNVfyFTgiMbhjKutssVVtlOz87Us05PCBpDGNZuhOVV01CmNojcHZJon4JGIA_hSf9jxUQBGNuis1bodzYDkAAn4EFTSTQFwqeMmDONNM1kE9ji7RpowPwYF_xaa0_Q"/>
-<div class="absolute top-3 right-3 badge">
-<span class="material-symbols-outlined text-[16px]">star</span> 4.9
-                        </div>
-</div>
-<div class="p-stack-md flex-1 flex flex-col">
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Mastering React</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant flex-1 mb-4">Learn to build modern, responsive web applications from scratch using React hooks, context, and advanced state management techniques.</p>
-<div class="mt-auto">
-<div class="flex justify-between items-center mb-2 font-label-sm text-label-sm text-on-surface-variant">
-<span>Progress</span>
-<span>0%</span>
-</div>
-<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="h-full bg-secondary w-0 transition-all duration-500 ease-out" role="progressbar"></div>
-</div>
-</div>
-</div>
-</article>
-<!-- Course Card 2 -->
-<article class="course-card flex flex-col h-full">
-<div class="relative h-48 w-full bg-surface-container">
-<img alt="Course Thumbnail" class="w-full h-full object-cover" data-alt="A sophisticated flat-lay composition showing a modern smartphone displaying marketing analytics charts, next to a sleek white notebook and a minimal metal pen on a clean, light grey desk surface. The aesthetic is clean corporate professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoz9cS5_x54RdFO_18mN0tTOwSHCag-kGnqn1tCt7mTErVcTJoUPAvgdxAk6nqfBXb5YBBz3jB0dF1-PDoVkN0q9_-sqPCUaNlC2Xie3DNMfECZHzHfz_Soljwu8SNMvhzllFhz5375YVNXJA-lzDCxOx3j27znCkS0-wrpf9nF3yZaADJ9Ebbba31E0fCHsX3SXKZw2xeT5R_Ww6uxQ7IQKeFYW6ORz2IwdIYcHkXgFUuFt-K7pK7Tw"/>
-<div class="absolute top-3 right-3 badge">
-<span class="material-symbols-outlined text-[16px]">star</span> 4.7
-                        </div>
-</div>
-<div class="p-stack-md flex-1 flex flex-col">
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Digital Marketing 101</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant flex-1 mb-4">Understand the fundamentals of SEO, social media strategy, and paid advertising to grow your brand's online presence effectively.</p>
-<div class="mt-auto">
-<div class="flex justify-between items-center mb-2 font-label-sm text-label-sm text-on-surface-variant">
-<span>Progress</span>
-<span>45%</span>
-</div>
-<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" class="h-full bg-secondary w-[45%] transition-all duration-500 ease-out" role="progressbar"></div>
-</div>
-</div>
-</div>
-</article>
-<!-- Course Card 3 -->
-<article class="course-card flex flex-col h-full">
-<div class="relative h-48 w-full bg-surface-container">
-<img alt="Course Thumbnail" class="w-full h-full object-cover" data-alt="A minimalist workspace featuring a high-end graphic tablet with a stylus resting on it, alongside a color swatch book with vibrant pastel colors spread out on a pristine white desk. Soft, natural lighting creates a creative yet structured mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjl18FIEmyQhw8RlXht1rbK-Z0fwab2IZCGg_zi611Tr1Qm_j534r70HkCRw3KvD4ryljC2jNtfG3v680TsBkmvcrJSYeBnDDFxPrLTu2JvRi_GiDmDU8aG2eZMY-C-a_WJ0XeNSkELTPQpiF3tXm-_tMfXmeoGMRV6dB2z09Zzrgdzi74es0qEzx_Bsn28GpyKMsoFuuu7zgp-MtY-gt13MA6wKH8VoOCbJu80yUAIR7wmDznaYPOHA"/>
-<div class="absolute top-3 right-3 badge">
-<span class="material-symbols-outlined text-[16px]">star</span> 4.8
-                        </div>
-</div>
-<div class="p-stack-md flex-1 flex flex-col">
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Graphic Design Basics</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant flex-1 mb-4">Master the principles of typography, color theory, and layout design using industry-standard tools to create compelling visuals.</p>
-<div class="mt-auto">
-<div class="flex justify-between items-center mb-2 font-label-sm text-label-sm text-on-surface-variant">
-<span>Progress</span>
-<span>12%</span>
-</div>
-<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="12" class="h-full bg-secondary w-[12%] transition-all duration-500 ease-out" role="progressbar"></div>
-</div>
-</div>
-</div>
-</article>
-<!-- Course Card 4 (To fill grid) -->
-<article class="course-card flex flex-col h-full">
-<div class="relative h-48 w-full bg-surface-container">
-<img alt="Course Thumbnail" class="w-full h-full object-cover" data-alt="A close-up shot of lines of clean Python code displayed on a modern, dark-themed code editor screen, but photographed with bright ambient light reflecting off the monitor bezel, keeping the overall image light and airy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBidISRzCWpS7R6r6EERFZxdhxFbE9ByNc6oNOEu_XyCgyc15eDy89PcxQiYc1o24lL2EvoctniuSU0J9G-VpFzBHaSRSbgKw2LJYuVFcLqyyqSCtzhYTqSS_oSvC0CRTJr51hYAFUQn6e9W9tYTjMFZWW6PYXgig7OuboEy9uNpvsa5w5cuoBYkvajmVGd_jLfCwsRa493DLtcXK9CRK0mBEgjag0y53JPPp6MSq7JLoDIM14sKkWCew"/>
-</div>
-<div class="p-stack-md flex-1 flex flex-col">
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Python Data Science</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant flex-1 mb-4">Dive into data manipulation and visualization using Pandas, NumPy, and Matplotlib. Perfect for beginners.</p>
-<div class="mt-auto pt-4 border-t border-outline-variant/50">
-<button class="w-full text-secondary font-label-md text-label-md hover:text-primary transition-colors text-center">Start Course</button>
-</div>
-</div>
-</article>
-</div>
-</main>
-<!-- Right SideNavBar - Community Feed -->
-<aside class="bg-surface dark:bg-surface-dim font-label-md text-label-md docked right-0 h-full w-80 bg-surface-container-low dark:bg-inverse-surface flat no shadows hidden xl:flex flex-col border-l border-outline-variant dark:border-outline py-6 flex-shrink-0 z-40 sticky top-[73px]" style="height: calc(100vh - 73px);">
-<div class="px-6 mb-6">
-<h2 class="font-headline-sm text-headline-sm text-secondary mb-1">Community</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Live Discussion</p>
-</div>
-<!-- Contextual Tabs from JSON -->
-<div class="flex border-b border-outline-variant mb-4 px-2">
-<button class="flex-1 pb-2 text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary text-center px-1"><span class="material-symbols-outlined text-[18px] align-middle mr-1">forum</span>Feed</button>
-<button class="flex-1 pb-2 text-on-surface-variant hover:text-secondary transition-colors text-center px-1"><span class="material-symbols-outlined text-[18px] align-middle mr-1">history</span>Activity</button>
-<button class="flex-1 pb-2 text-on-surface-variant hover:text-secondary transition-colors text-center px-1"><span class="material-symbols-outlined text-[18px] align-middle mr-1">star</span>Top</button>
-</div>
-<div class="flex-1 overflow-y-auto px-6 space-y-6">
-<!-- Feed Item 1 -->
-<div class="flex gap-3">
-<img alt="Student Avatar" class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A small, circular avatar of a young female student with glasses, smiling genuinely in a bright, modern library setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Mfpk0mNgfJGAmc17PV3WhGkJASTuGB11BcHQgHD7kcoS7bo8Nl_f0hZtYTMJe7z8M3Paap4UB7QcOK09DuWsxv3FBMrygz3FjOfVxfoqi5R6GsNKt146sa7404lN35qkmex0spHDtR0mLv6Ah_wKwnR5QSxhhDP0TMpdp3tobznn1-_bov5deVIeMA9SjkKC_9Edrm_Js26xKPH1WP_BsEzkXIPhNsjye2KTB5N5pk_TC6ghR2MvoA"/>
-<div>
-<div class="flex items-baseline justify-between mb-1">
-<span class="font-label-md text-label-md text-on-surface">Sarah J.</span>
-<span class="font-label-sm text-label-sm text-outline">2h ago</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/50">Great course on Python! The examples are really clear.</p>
-</div>
-</div>
-<!-- Feed Item 2 -->
-<div class="flex gap-3">
-<img alt="Student Avatar" class="w-8 h-8 rounded-full bg-surface-container-high object-cover" data-alt="A small, circular avatar of a middle-aged male professional in a smart casual shirt, looking thoughtful against a clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB369rqtWrUrcqkxtqv24l_-U_K5Ct75WckTR5rdKIFYcrj-v7-uGl25wAGiowntLMxatdQHvt_8lQvXioYEk-bigTC0vS2udxXH8qOSXxrtaaVU9VeyaQ2tzAzh5xWBYA0mRE0lME3RKzDwbhhRANCA0iO2mYCKL9UdEJ85OYqmIYUP4K8V1Uo7_ivAHTO8kgPBd4v7vg9xZf-miGsvQQ1aKY74HPVyEOp37Db8SYeUHYDVQlj-jOPCg"/>
-<div>
-<div class="flex items-baseline justify-between mb-1">
-<span class="font-label-md text-label-md text-on-surface">Marcus T.</span>
-<span class="font-label-sm text-label-sm text-outline">5h ago</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/50">The UI design section is amazing. Completely changed how I approach wireframing.</p>
-</div>
-</div>
-<!-- Feed Item 3 -->
-<div class="flex gap-3">
-<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed flex items-center justify-center font-bold text-sm">
-                        EL
+
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased">
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md border-b border-border-subtle">
+    <div
+      class="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin h-16 flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm shrink-0" data-path="inicio"
+          href="#"><img alt="EduFlow Logo" class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1VITQNq6jJocNITcemluy32QzbSpszzkFSfjfDfxgIQrFwAvXGpv25mzvtpVqKy-ur-VpS697epS3iqoMFmEFCWZMs-ks9cZQcp1bVEA4cKCQ_-pyRZ--w7XKcMRhCfiJXakVErD4Wgf8UwWDPoYN_IZJZIT_2yZZ8bS8IEMcsqPGuQL5TmztZmN7Wv8PgIWDKzba6QjyFCUo2QkPLcbnKiuOLvtKOrfeBrAfGFiWPFQV4a4QzNBGuv8G4" /><span
+            class="font-headline-sm text-headline-sm text-primary tracking-tight">EduFlow</span></a>
+        <div class="hidden xl:flex items-center relative w-64"><span
+            class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input
+            class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low border border-border-subtle font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary transition-colors"
+            placeholder="Buscar cursos, habilidades..." type="text" /></div>
+      </div>
+      <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-headline-sm"><a
+          aria-current="page" class="transition-colors text-primary font-headline-sm" data-path="cursos"
+          href="#">Cursos</a><a
+          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="carreras-tecnicas" href="#">Carreras Técnicas</a><a
+          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="certificaciones" href="#">Certificaciones</a><a
+          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="empresas" href="#">Empresas</a></nav>
+      <div class="flex items-center gap-space-sm"><a
+          class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-primary-container hover:bg-surface-container-low hover:text-primary transition-colors"
+          data-path="iniciar-sesion" href="{% url 'login' %}">Iniciar Sesión</a><a
+          class="px-space-md py-space-xs rounded-lg font-label-md text-label-md bg-primary-container text-on-primary hover:bg-primary transition-colors"
+          data-path="registro" href="registro.html">Registrarse</a>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-space-xs"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-16 bg-background min-h-screen">
+    <div class="flex flex-col w-full">
+      <!-- Top Anchor Contextual Bar (Notice Chilean SENCE Accreditation) -->
+      <section class="w-full bg-primary-container text-on-primary py-space-sm px-margin-mobile md:px-margin">
+        <div
+          class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center justify-between gap-space-xs text-center md:text-left">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-secondary-fixed text-[18px]">verified</span>
+            <span class="font-label-sm text-label-sm tracking-wide uppercase text-secondary-fixed">Organismo Técnico de
+              Capacitación (OTEC)</span>
+            <span class="hidden md:inline text-on-primary-container">•</span>
+            <span class="font-body-sm text-body-sm text-surface-bright">Registro Vigente SENCE & Articulación con
+              ChileValora</span>
+          </div>
+          <div class="flex items-center gap-space-md text-surface-bright">
+            <a class="font-label-sm text-label-sm underline hover:text-white transition-colors"
+              href="#empresas-sence">Convenios Franquicia 1% SENCE</a>
+            <span class="text-on-primary-container">•</span>
+            <span class="font-label-sm text-label-sm flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-[16px]">schedule</span> Matrículas Abiertas 2025
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- Section Header & Advanced Search Filter Canvas -->
+      <section class="w-full bg-surface-container-lowest py-space-xl shadow-sm">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+          <!-- Breadcrumb & Status -->
+          <div class="flex items-center gap-space-xs mb-space-sm">
+            <a class="font-label-sm text-label-sm text-text-muted hover:text-primary transition-colors"
+              href="#">Inicio</a>
+            <span class="font-label-sm text-label-sm text-outline">/</span>
+            <span class="font-label-sm text-label-sm text-primary font-semibold">Cursos Disponibles</span>
+            <span
+              class="ml-space-sm px-space-xs py-0.5 rounded-full bg-secondary-fixed text-primary font-label-sm text-label-sm">Catálogo
+              Activo 2025</span>
+          </div>
+          <!-- Main Section Titles -->
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md mb-space-xl">
+            <div class="max-w-3xl">
+              <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-text-primary tracking-tight">
+                Explora Nuestros Cursos y Programas Técnicos
+              </h1>
+              <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+                Formación profesional online y certificada con validez para el mercado laboral chileno. Diseñada para
+                técnicos, especialistas de la salud y operadores industriales.
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-space-sm self-start lg:self-auto bg-surface-container-low px-space-md py-space-sm rounded-lg">
+              <span class="material-symbols-outlined text-secondary text-[24px]">school</span>
+              <div>
+                <div class="font-label-sm text-label-sm text-on-surface">11 Programas Certificados</div>
+                <div class="font-body-sm text-body-sm text-text-muted">Con opción a Franquicia SENCE</div>
+              </div>
+            </div>
+          </div>
+          <!-- Advanced Search Bar & Selector Filters Box -->
+          <div class="bg-surface-base p-space-md md:p-space-lg rounded-xl shadow-sm">
+            <!-- Input line -->
+            <div class="flex flex-col md:flex-row items-stretch gap-space-sm mb-space-md">
+              <div class="relative flex-1">
+                <span
+                  class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[22px]">search</span>
+                <input
+                  class="w-full h-12 pl-11 pr-4 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/20 shadow-sm"
+                  id="course-search-input"
+                  placeholder="Buscar por especialidad, certificación o código SENCE (ej. SEC, BLS, Python, Minsal)..."
+                  type="text" />
+              </div>
+              <button
+                class="h-12 px-space-lg bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-space-xs hover:bg-primary transition-all shadow-sm shrink-0"
+                id="search-btn" type="button">
+                <span class="material-symbols-outlined text-[18px]">tune</span>
+                <span>Buscar Cursos</span>
+              </button>
+            </div>
+            <!-- Filter Selectors Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-xs">
+              <div>
+                <label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Área Ocupacional</label>
+                <select
+                  class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20"
+                  id="area-filter">
+                  <option value="all">Todas las especialidades</option>
+                  <option value="salud">Salud y Medicina</option>
+                  <option value="tecnologia">Tecnología y Computación</option>
+                  <option value="electricidad">Electricidad y Electrónica</option>
+                  <option value="industria">Técnicos Industriales</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Modalidad</label>
+                <select
+                  class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20"
+                  id="modality-filter">
+                  <option value="all">Todas las modalidades</option>
+                  <option value="online">100% Online Asincrónico</option>
+                  <option value="hibrido">Semi-presencial / Práctico</option>
+                  <option value="vivo">Clases en Vivo (Streaming)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Carga Horaria</label>
+                <select
+                  class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20"
+                  id="duration-filter">
+                  <option value="all">Cualquier duración</option>
+                  <option value="corta">Cursos Rápidos (30 - 45 hrs)</option>
+                  <option value="media">Medios (60 - 75 hrs)</option>
+                  <option value="larga">Especializaciones (80 - 100 hrs)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Acreditación
+                  Nacional</label>
+                <select
+                  class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/20"
+                  id="cert-filter">
+                  <option value="all">Todas las acreditaciones</option>
+                  <option value="sence">Código SENCE Disponible</option>
+                  <option value="sec">Preparación SEC Clase D</option>
+                  <option value="minsal">Protocolo MINSAL / Salud</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Quick Filter Chips -->
+          <div class="flex items-center gap-space-xs mt-space-md overflow-x-auto pb-1 scrollbar-none">
+            <span class="font-label-sm text-label-sm text-text-muted shrink-0 mr-1">Filtros Rápidos:</span>
+            <button
+              class="filter-chip active-chip px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary transition-all shrink-0 flex items-center gap-1"
+              data-category="all">
+              Todos los Cursos
+            </button>
+            <button
+              class="filter-chip px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-all shrink-0 flex items-center gap-1"
+              data-category="salud">
+              <span class="material-symbols-outlined text-[16px]">medical_services</span> Salud y Medicina
+            </button>
+            <button
+              class="filter-chip px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-all shrink-0 flex items-center gap-1"
+              data-category="tecnologia">
+              <span class="material-symbols-outlined text-[16px]">terminal</span> Tecnología y Computación
+            </button>
+            <button
+              class="filter-chip px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-all shrink-0 flex items-center gap-1"
+              data-category="electricidad">
+              <span class="material-symbols-outlined text-[16px]">bolt</span> Electricidad y Electrónica
+            </button>
+            <button
+              class="filter-chip px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-all shrink-0 flex items-center gap-1"
+              data-category="industria">
+              <span class="material-symbols-outlined text-[16px]">precision_manufacturing</span> Técnicos Industriales
+            </button>
+            <button
+              class="filter-chip px-space-md py-1.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-primary font-semibold hover:bg-secondary-fixed-dim transition-all shrink-0 flex items-center gap-1"
+              data-category="sence">
+              <span class="material-symbols-outlined text-[16px]">workspace_premium</span> Franquicia SENCE
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Chilean Accreditation & Official Standards Metric Ribbon -->
+      <section class="w-full bg-surface-container-low py-space-lg">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+            <!-- Feature 1 -->
+            <div class="bg-surface-card p-space-md rounded-lg shadow-sm flex items-start gap-space-md">
+              <div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center shrink-0 text-primary">
+                <span class="material-symbols-outlined text-[26px]">account_balance</span>
+              </div>
+              <div>
+                <h2 class="font-headline-sm text-headline-sm text-on-surface mb-0.5">Franquicia Tributaria SENCE</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Programas con código SENCE activo. Imputables al 1% de la planilla de remuneraciones para empresas en
+                  Chile.
+                </p>
+              </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="bg-surface-card p-space-md rounded-lg shadow-sm flex items-start gap-space-md">
+              <div
+                class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center shrink-0 text-secondary">
+                <span class="material-symbols-outlined text-[26px]">handshake</span>
+              </div>
+              <div>
+                <h2 class="font-headline-sm text-headline-sm text-on-surface mb-0.5">Articulación con CFT e IP</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Módulos evaluados bajo el Marco Nacional de Cualificaciones Técnico-Profesionales (MCTP) con opción a
+                  continuidad.
+                </p>
+              </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="bg-surface-card p-space-md rounded-lg shadow-sm flex items-start gap-space-md">
+              <div
+                class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 text-primary-container">
+                <span class="material-symbols-outlined text-[26px]">verified_user</span>
+              </div>
+              <div>
+                <h2 class="font-headline-sm text-headline-sm text-on-surface mb-0.5">Certificación Digital Verificable
+                </h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Certificados con código QR seguro, firma electrónica avanzada y respaldo institucional para
+                  postulaciones públicas y privadas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Main Course Catalog Section -->
+      <section class="w-full py-space-xl">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+          <!-- Catalog Controls Status -->
+          <div class="flex items-center justify-between mb-space-lg">
+            <div>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Resultados del
+                Catálogo</span>
+              <p class="font-headline-sm text-headline-sm text-on-surface">Cursos y Especialidades para Certificación
+                Inmediata</p>
+            </div>
+            <div class="hidden sm:flex items-center gap-space-sm text-on-surface-variant">
+              <span class="font-body-sm text-body-sm">Ordenar por:</span>
+              <select
+                class="h-9 px-space-sm bg-surface-card rounded font-label-md text-label-md text-on-surface focus:outline-none shadow-sm"
+                id="sort-select">
+                <option value="featured">Recomendados Laborales</option>
+                <option value="price-asc">Menor Precio</option>
+                <option value="price-desc">Mayor Precio</option>
+                <option value="hours">Mayor Carga Horaria</option>
+              </select>
+            </div>
+          </div>
+          <!-- Course Cards Responsive Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="course-grid">
+            <!-- ==================== AREA 1: SALUD Y MEDICINA ==================== -->
+            <!-- Curso 1: Medicina Básica -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="salud" data-hours="60" data-price="85000" data-sence="false">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="Modern medical clinical training room in Santiago Chile, showing anatomical model torso, stethoscope, medical charts, and a clean digital health study notebook in cool clinical lighting with navy and slate blue accents."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlppbwKag0tpzz1gX0XTDlU1iEmTY007RboY9rU3F6a0GJ2WCbuaivnu8bBDeb5Wi3pmMK80uD6YWbJRPMtB3o_8bXDPEuwdYh0W2KJsfrE35X2AUSjdFwKfu737HDoSKG8OKmoEVu1yAGjEstgA5lBXc3SXDcs4ViN-dMwNHlfJyh-tDxnEe3eb225xuUivKdrXqk6qIhufNWgsSzV85ieC0zkUEQCkt69q1BhRZcWwaOIe_JrY-3" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Salud & Anatomía
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+                    Nivel Inicial
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">monitor_heart</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Área Clínica Asistencial</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Fundamentos de Medicina Básica y Anatomía Funcional
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Introducción clínica a la fisiología, toma y registro de signos vitales, y terminología médica
+                    aplicada para asistentes y cuidadores.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">60 hrs cronológicas</span>
                     </div>
-<div>
-<div class="flex items-baseline justify-between mb-1">
-<span class="font-label-md text-label-md text-on-surface">Elena L.</span>
-<span class="font-label-sm text-label-sm text-outline">1d ago</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/50">Need help with lesson 4 in the Marketing course. Anyone understand the attribution models?</p>
-<button class="mt-2 text-secondary font-label-sm text-label-sm flex items-center hover:underline">
-<span class="material-symbols-outlined text-[16px] mr-1">reply</span> Reply
-                        </button>
-</div>
-</div>
-</div>
-<div class="p-4 border-t border-outline-variant mt-auto bg-surface-container-lowest">
-<input class="w-full px-3 py-2 bg-surface border border-outline-variant rounded-lg focus:outline-none focus:border-secondary text-body-sm" placeholder="Post to community..." type="text"/>
-</div>
-</aside>
-</div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">devices</span>
+                      <span class="font-body-sm text-body-sm">100% Online Asincrónico</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificado EduFlow + Diploma
+                        Clínico</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Total</span>
+                      <span class="font-headline-md text-headline-md text-primary">$85.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span
+                      class="text-right font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-1 rounded">
+                      Hasta 3 cuotas sin interés
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Curso 2: Primeros Auxilios BLS -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="salud" data-hours="30" data-price="45000" data-sence="false">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="First aid and cardiopulmonary resuscitation training setting in Santiago, showing a training mannequin, automated external defibrillator AED trainer device, clean paramedic equipment, professional instruction ambiance in deep blue and red tones."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWumkHFcB3cfQYptv3UomIfF82wBr9z4iFnZFUPscyOcz78acXIlon_KrAmPUVeG8_MfJLix6nGw-hudr8KJtef5N6NhEFGV-Wjp_3bVN2QRwfzRw6400kAk5_Qq7l-5OxSHSVZul3iFPSIUS7fwouykaSEAIQ90YiHxAG5A7cSLnFWztp91oOb4u_V3e9BTCR37RfupJPzS6mP6t14UQX3AX5lYywurxDK8BwL3G-xlFMB3OG7cCM" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Salud & Urgencias
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-primary font-label-sm text-label-sm">
+                    Protocolo MINSAL
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">emergency</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Soporte Vital Básico</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Primeros Auxilios y Soporte Vital Básico (BLS)
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Protocolos de emergencia, RCP de alta calidad, uso de DEA y manejo de trauma prehospitalario bajo
+                    normativa sanitaria chilena MINSAL.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">30 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">model_training</span>
+                      <span class="font-body-sm text-body-sm">Teórico / Práctico</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Credencial BLS Verificable</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Promocional</span>
+                      <span class="font-headline-md text-headline-md text-primary">$45.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span
+                      class="text-right font-label-sm text-label-sm text-feedback-success bg-surface-container-high px-2 py-1 rounded">
+                      Matrícula Costo $0
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Curso 3: Farmacología Básica -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="salud" data-hours="45" data-price="60000" data-sence="false">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="Pharmacy dispensing station in Chile, showing medication dosage packaging, pharmaceutical scales, professional prescription logbooks and clean hospital laboratory equipment under neutral corporate lighting."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6TMerOQNhUepm3xAOiXYGXs5rHwoskqmxR0tPJFbzfVWFNM1Qwq_-EW2IvGqPgr2fCG4aBN_AoO4vrzon_B8nUGmAlKCjDgOvMptzAiFbql8Le0lZ9J3gH1yGV113OwXYTOdno795q4kAZi0ZZ5ENosBwfGhshgurXCLaDIztG-3enZa8K1bzW1-mBHo-OdtMspOKgV0ziqZZwT5ZsZrtUL-r1SXun4EUV8q-916IqR90_XzW-Fnc" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Salud & Apoyo
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm">
+                    Cuidadores & TENS
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">medication</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Farmacología Aplicada</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Técnicas Básicas de Farmacología y Administración
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Capacitación especializada para personal de apoyo en salud, cuidadores domiciliarios y auxiliares de
+                    enfermería sobre dosificación y vías seguras.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">45 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">laptop_chromebook</span>
+                      <span class="font-body-sm text-body-sm">100% Online</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificado Académico EduFlow</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Total</span>
+                      <span class="font-headline-md text-headline-md text-primary">$60.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span class="text-right font-label-sm text-label-sm text-text-muted">
+                      Disponible Inmediato
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ==================== AREA 2: TECNOLOGIA & COMPUTACION ==================== -->
+            <!-- Curso 4: Algoritmos y Python -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="tecnologia" data-hours="80" data-price="95000" data-sence="true">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="Modern software engineering workspace in Chile with clean dual monitors displaying Python code algorithms, relational database structures, in minimal navy and dark slate styling."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlul1cylq8U0Gf2vfbarLDoLpelturUyhzAjOL3Ne3R50czHMYdypI5Ro_E0EErv5RuJv1tl1N1M8icL0euPTpxrFfj74p1vd5kgoG9pCPmV_tLLnc_7dqKskBGa620eMpKWtSQDKdhnJm5n7OMmt6KxVH_Ym4VkE7z34AXC8V3FNMc_S-sRqPSMJatgZQ1ApOMn1TH_XgengmOqQRs-QoIaiF9zinb_UBJXMSOBpRGgpNYLHVmVw" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Tecnología & TI
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-primary font-semibold font-label-sm text-label-sm">
+                    Código SENCE
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">code</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Programación & Datos</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Fundamentos de Computación, Algoritmos y Python
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Lógica computacional, automatización de scripts, estructuras de control y conexión a bases de datos
+                    relacionales SQL para análisis técnico.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">80 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">cloud</span>
+                      <span class="font-body-sm text-body-sm">Laboratorios Cloud</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificado Internacional + SENCE</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Regular</span>
+                      <span class="font-headline-md text-headline-md text-primary">$95.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span
+                      class="text-right font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-1 rounded">
+                      Franquicia 100% Empresas
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Curso 5: Soporte y Ciberseguridad -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="tecnologia" data-hours="75" data-price="90000" data-sence="false">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="IT support and computer networking rack datacenter in Santiago, showcasing fiber cables, Ethernet routers, diagnostic tools, and cybersecurity monitoring dashboard in crisp enterprise illumination."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoEosCoas72pfkvFcQQmdi4VdUSLomznCWYTYcG6o-ObnTqFDxHkddwiXG4fP_MoTWFf0AzP2UsCGpe9_U4WY-bQ1yo3dEFy9efj4vLUmWBoPVNC5OG5EB2qgwJkEGLgyuAdxhowXctrem7R6B4IVZGWDT1ONqS6Mqp_kt4aAUX_bS1uFs77xDwXrPeE9e6DxLLxR2XU2AfYxtTO3xyU-OHJX3piPqzLEqQtsml0yTWWPR0Sj8kdZC" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Infraestructura TI
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm">
+                    CompTIA Alignment
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">security</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Redes y Seguridad</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Soporte Computacional, Redes y Ciberseguridad Básica
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Mantenimiento preventivo de hardware, configuración de redes LAN/Wi-Fi seguras, cortafuegos y
+                    políticas de protección corporativa.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">75 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">lan</span>
+                      <span class="font-body-sm text-body-sm">Prácticas Virtuales</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificado Soporte Técnico TI</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Total</span>
+                      <span class="font-headline-md text-headline-md text-primary">$90.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span class="text-right font-label-sm text-label-sm text-text-muted">
+                      Acceso 12 Meses
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Curso 6: Desarrollo Web Full-Stack -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="tecnologia" data-hours="100" data-price="120000" data-sence="false">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="Modern web development coding desk in Chile with laptops showing HTML, CSS responsive interfaces, JavaScript code, and API architectures with architectural design drawings in clean tech environment."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlFslMLbO1KhGGZzuXQamtUmQRbM2s9LGQoN7BBnOoe34yCDkXq0OWYBl7IHe8AkL4tM6zO6enx667qR7ISkGAUnKkyle-XsIZTNVyMQXFRxVlpn8EdHqI6_B1nC_VBh1V_49J8zP_16IE_9Ol5XZvKY8IUQvSETN0Fq0sITJxLUdPeCT4fdWL61q_GBdtOLsQ4qh11F5Efk6QQ4ytHGzOzVMgzpuHSoHCD83KTHve9R5FF12ZDxTl" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Desarrollo Web
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm">
+                    Bootcamp Format
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">web</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Frontend & Backend</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Desarrollo Web Full-Stack para Principiantes
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Aprende desde cero HTML5, CSS moderno, JavaScript ES6+, conexión a APIs RESTful y despliegue de
+                    aplicaciones en la nube.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">100 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">integration_instructions</span>
+                      <span class="font-body-sm text-body-sm">Proyecto Final Real</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificación Full-Stack Developer</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Total</span>
+                      <span class="font-headline-md text-headline-md text-primary">$120.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span
+                      class="text-right font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-1 rounded">
+                      Convenio con Portales TI
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ==================== AREA 3: ELECTRICIDAD & ELECTRONICA ==================== -->
+            <!-- Curso 7: Arduino y Microcontroladores -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="electricidad" data-hours="70" data-price="85000" data-sence="false">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="Electronics laboratory workstation in Santiago Chile with breadboards, Arduino microcontrollers, digital oscilloscopes, soldering tools, and blue LED indicator circuits on bench."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCskf9x6jh_TWTaxqXSfAgrKNcxFyPi-nVIR7DBYUGy0zv3XMRg43x-rI3IEcICWrwOjyJzEiO2O3vkKLGHNaJ7sTjH4_Z-x3uIF4D4bDYrmXFvjhx5k89BwaSV8a5JmvHmllq-TIyLalWx1oQKnHo0X1uSInfBlmyY7sIkGT4NM9oAkNezQlj-FZubEutg1djAOHLVP67XM9yQwVnBlYclIpNduxtfDQ_o_d1uJRfKn3ICH2f6NIkr" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Electrónica Aplicada
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm">
+                    IoT Básico
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">developer_board</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Circuitos & Hardware</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Electrónica Básica, Circuitos y Microcontroladores (Arduino)
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Componentes pasivos y activos, uso de multímetros y osciloscopios, programación de placas Arduino y
+                    prototipado rápido de sensores.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">70 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">memory</span>
+                      <span class="font-body-sm text-body-sm">Simulador Tinkercad</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificación Técnica en
+                        Prototipado</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Total</span>
+                      <span class="font-headline-md text-headline-md text-primary">$85.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span
+                      class="text-right font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-1 rounded">
+                      Kits Opcionales
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Curso 8: Instalaciones Eléctricas Domiciliarias SEC -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="electricidad" data-hours="90" data-price="110000" data-sec="true" data-sence="true">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="Chilean electrical panel installation according to SEC regulations, circuit breakers, protective conduit, blueprints, and multimeter tester in Chilean residential construction site setting."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxOmKBjXJuSxsw4eNwFhb3INNUVkQyQ3-Q0CoLbTNrtOJVNTZ6G9rn_GKuvskGNrf4lLfPMLfHxjtd7uv5gT_gaDvJ3SD3GYyehCbr5LZHEvDYL0qSlpDHHfLYnsdtAo3xcseTb_7_3xJCoyAfIZUZo4ynl11CwjypDgUtwZ3Lnf5pjG5thXLO70i8mEuKD6o6-kMSDkd33P2vHT2opIhmzU4jHj3yWS84wB5NhF1oKBcyysgVYt5n" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Electricidad SEC
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-primary font-semibold font-label-sm text-label-sm">
+                    Código SENCE
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">bolt</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Normativa RIC Chile</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Instalaciones Eléctricas Domiciliarias (Preparación Certificación SEC)
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Conforme al Pliego Técnico Normativo RIC del Decreto 8 de la SEC. Cálculo de cargas,
+                    dimensionamiento de protecciones, planos y puesta a tierra.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">90 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">approval</span>
+                      <span class="font-body-sm text-body-sm">Prepara Licencia SEC D</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Código SENCE Vigente + Certificado</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Curso</span>
+                      <span class="font-headline-md text-headline-md text-primary">$110.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span
+                      class="text-right font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-1 rounded">
+                      Franquicia Tributaria
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Curso 9: Automatización Industrial -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="electricidad" data-hours="80" data-price="105000" data-sence="false">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="Industrial automation panel showing Siemens PLC controller, industrial sensors, relay modules, and pneumatic valves in an automation engineering laboratory in Santiago."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoeGEznUW1LLDkPSNkcJ6CtUcXLBQZzJCZAhhb0mSo4jxohGBlDJOcgQO4EZtql42Xouw2_PBmCr6iXciA-cd8pohYk7JPDXIuyANscCk0bk6Yovrl6kJFDLLcTSJBtby6MEfXFnfRLenyhUFX_BWCzBqXKUQY9LqVu6-Npe2AkDTK3yR3ysmB5TBIamOqW5Neon5lZUwabzp4EaZ243JNT8tv6EufRHmBor_H25gxiedG_ZsmaH2p" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Control Industrial
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm">
+                    PLC & Sensores
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">smart_toy</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Industria 4.0</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Automatización Industrial y Sensores
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Programación en diagramas de contactos (Ladder), conexionado de sensores inductivos/ópticos,
+                    contactores y relevadores para líneas productivas.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">80 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">computer</span>
+                      <span class="font-body-sm text-body-sm">Simulación PLC</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificado Automatización Técnica</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Total</span>
+                      <span class="font-headline-md text-headline-md text-primary">$105.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span class="text-right font-label-sm text-label-sm text-text-muted">
+                      Financiamiento Directo
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ==================== AREA 4: CURSOS TECNICOS CLAVE CHILE ==================== -->
+            <!-- Curso 10: Climatización y Refrigeración Residencial -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="industria" data-hours="65" data-price="80000" data-sence="false">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="HVAC residential technician servicing a split air conditioning system with manifold gauges, refrigerant vacuum pump and thermal sensor tools in Santiago modern residential facility."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmQ51JeoXQG4cwcZ0vHBYUml9NTUVJEU765Bdn2WkH-sE07zLr2Z7hkRANWKrPDkJADAdFWfra-pHnYSAAdfjMTyCrLtYHczk6SME0ojXHG5KuUwk2MIgdybegxYAdLs1emc_KdaVNy5EfK6SiXF2JOztBI1Z6zq8tOiMSS9Odu7N_G6_f15hRLQKJdnSgwS9LEiEG09oLxxxLjzZW9ULDZZJCySBk72O5paqWeVKLiGOopeS36e7C" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Técnico HVAC
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-surface-card/90 text-on-surface font-label-sm text-label-sm">
+                    Alta Demanda
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">ac_unit</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Climatización & Frío</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Técnico en Climatización y Refrigeración Residencial
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Instalación, vacío y carga de refrigerantes ecológicos conforme a la reglamentación ambiental de
+                    Chile y mantención preventiva de sistemas split.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">65 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">videocam</span>
+                      <span class="font-body-sm text-body-sm">Guías Técnicas en Video</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificación de Instalador HVAC</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Total</span>
+                      <span class="font-headline-md text-headline-md text-primary">$80.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span class="text-right font-label-sm text-label-sm text-text-muted">
+                      Acceso Inmediato
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Curso 11: Operación de Calderas DS 10/2012 -->
+            <div
+              class="course-card bg-surface-card rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden group"
+              data-category="industria" data-hours="40" data-price="70000" data-sence="true">
+              <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-alt="Industrial boiler room and autoclave machinery in Chilean factory with certified pressure gauges, steam valves, safety relief systems, inspection technician checking parameters."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPuBAHYA9GbU1cr4de_LDZGO4ubVSxwVNYj9YheNHpXwOnAnIQ3TpmCaBBRuf1-4XLeVKpzfX2zzpsw3ft9ip6YzoK0P3h8xkilkEj5CSq_4fPrpPo3bSxVhKPk3_RjEinc0k8av3v2wepcwyn16oYDkWwNztAF5zwWkXWwwJ41Xz5bWmS3H-T11SaXD4HYEl1sYJBJgZWOPQqigOIVfEN7BDKOEe9mUY3V2XjTi_6emnrNshO54u3" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm">
+                    Norma D.S. 10/2012
+                  </span>
+                  <span
+                    class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-primary font-semibold font-label-sm text-label-sm">
+                    Código SENCE
+                  </span>
+                </div>
+                <button aria-label="Guardar curso"
+                  class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 text-text-muted hover:text-error flex items-center justify-center transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[18px]">bookmark</span>
+                </button>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+                    <span class="material-symbols-outlined text-[16px]">speed</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wide">Seguridad Industrial &
+                      SEREMI</span>
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Operación Segura de Calderas y Autoclaves (Norma D.S. 10/2012)
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                    Preparación intensiva para el examen teórico-práctico de operador de calderas de vapor ante la
+                    SEREMI de Salud de Chile.
+                  </p>
+                  <!-- Metadatos de Carga -->
+                  <div
+                    class="grid grid-cols-2 gap-space-xs py-space-sm my-space-sm bg-surface-container-low rounded-lg px-space-sm">
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                      <span class="font-body-sm text-body-sm">40 hrs cronológicas</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">fact_check</span>
+                      <span class="font-body-sm text-body-sm">Simulacro SEREMI</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-on-surface-variant col-span-2">
+                      <span class="material-symbols-outlined text-[16px] text-feedback-success">verified</span>
+                      <span class="font-body-sm text-body-sm text-on-surface">Certificado Oficial + Código SENCE</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Precios y Acciones -->
+                <div class="pt-space-sm">
+                  <div class="flex items-baseline justify-between mb-space-sm">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-text-muted block">Arancel Certificado</span>
+                      <span class="font-headline-md text-headline-md text-primary">$70.000 <span
+                          class="font-label-sm text-label-sm text-text-muted">CLP</span></span>
+                    </div>
+                    <span
+                      class="text-right font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-1 rounded">
+                      Franquicia Empresas
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <button
+                      class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-1">
+                      Ver Detalle del Curso
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Empty State Container (for JavaScript filtering) -->
+          <div class="hidden py-space-xl text-center bg-surface-card rounded-xl my-space-md shadow-sm"
+            id="no-results-msg">
+            <span class="material-symbols-outlined text-outline text-[48px] mb-2">search_off</span>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">No se encontraron cursos con los criterios
+              seleccionados</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-md mx-auto">
+              Intenta ajustar los filtros de especialidad o el término de búsqueda. Recuerda que puedes buscar por
+              términos como "SEC", "SENCE", "RCP" o "Python".
+            </p>
+            <button
+              class="mt-space-md px-space-md py-space-xs rounded-lg font-label-md text-label-md bg-primary-container text-on-primary hover:bg-primary transition-colors"
+              id="reset-filters-btn">
+              Restablecer Filtros
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Interactive Pathways & Curriculum Articulation Section (MCTP Chile) -->
+      <section class="w-full bg-surface-container-low py-space-xl">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+          <div class="bg-surface-card p-space-lg md:p-space-xl rounded-xl shadow-sm">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-space-lg">
+              <div class="max-w-2xl">
+                <span
+                  class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-primary font-label-sm text-label-sm font-semibold">
+                  Marco Nacional de Cualificaciones (MCTP)
+                </span>
+                <h2 class="font-headline-md text-headline-md text-on-surface mt-space-xs">
+                  Convalida tus Horas de Aprendizaje en la Educación Superior
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+                  En EduFlow diseñamos nuestros programas bajo los estándares del Marco de Cualificaciones
+                  Técnico-Profesionales de Chile. Al certificar tus competencias con nosotros, acumulas créditos
+                  transferibles reconocidos en instituciones de formación técnica aliadas.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-space-md mt-space-lg">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+                    <span class="font-label-sm text-label-sm text-on-surface">Créditos SCT Chile</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+                    <span class="font-label-sm text-label-sm text-on-surface">ChileValora Compatible</span>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+                    <span class="font-label-sm text-label-sm text-on-surface">Auditoría SENCE OTEC</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full lg:w-auto shrink-0 flex flex-col sm:flex-row lg:flex-col gap-space-sm">
+                <a class="px-space-lg py-space-md rounded-lg font-label-md text-label-md bg-secondary text-on-secondary hover:bg-primary transition-colors text-center shadow-sm"
+                  href="#">
+                  Consultar Malla de Convalidación
+                </a>
+                <a class="px-space-lg py-space-md rounded-lg font-label-md text-label-md bg-surface-container-high text-on-surface hover:bg-surface-dim transition-colors text-center"
+                  href="#">
+                  Descargar Informe MCTP 2025
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Dual Action Banner (Enterprise SENCE & Student Diagnostic) -->
+      <section class="w-full bg-surface-container-lowest py-space-xl" id="empresas-sence">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+            <!-- Card 1: Empresas & Franquicia SENCE -->
+            <div
+              class="bg-primary-container text-on-primary p-space-xl rounded-xl shadow-md flex flex-col justify-between relative overflow-hidden">
+              <div class="relative z-10">
+                <div
+                  class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold mb-space-md">
+                  <span class="material-symbols-outlined text-[16px]">domain</span>
+                  Para Departamentos de RRHH y Operaciones
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-primary leading-tight">
+                  ¿Representas a una empresa? Utiliza la Franquicia Tributaria SENCE
+                </h3>
+                <p class="font-body-md text-body-md text-surface-bright mt-space-sm">
+                  Capacita a tus colaboradores sin costo directo para tu organización, deduciendo hasta el 1% de la
+                  planilla de remuneraciones anuales. Diseñamos planes cerrados a la medida con reportería sincrónica de
+                  avance de tu equipo.
+                </p>
+                <ul class="space-y-space-xs my-space-md font-body-sm text-body-sm text-secondary-fixed">
+                  <li class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                    Gestión completa de códigos y liquidación ante OTIC/SENCE
+                  </li>
+                  <li class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                    Reportería de asistencia biométrica y evaluaciones en tiempo real
+                  </li>
+                  <li class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                    Facturación conforme a normativa SII y exención de IVA
+                  </li>
+                </ul>
+              </div>
+              <div class="relative z-10 pt-space-sm flex flex-col sm:flex-row gap-space-sm">
+                <button
+                  class="px-space-lg py-space-sm rounded-lg font-label-md text-label-md bg-surface-card text-primary font-semibold hover:bg-surface-bright transition-colors shadow-sm">
+                  Contactar con Asesoría Empresas
+                </button>
+                <button
+                  class="px-space-md py-space-sm rounded-lg font-label-md text-label-md bg-secondary text-on-secondary hover:bg-primary transition-colors text-center">
+                  Cotizar Cursos para Grupos
+                </button>
+              </div>
+            </div>
+            <!-- Card 2: Alumnos & Diagnóstico Gratuito -->
+            <div class="bg-surface-base p-space-xl rounded-xl shadow-sm flex flex-col justify-between">
+              <div>
+                <div
+                  class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-secondary-fixed text-primary font-label-sm text-label-sm font-semibold mb-space-md">
+                  <span class="material-symbols-outlined text-[16px]">school</span>
+                  Postulantes & Estudiantes Individuales
+                </div>
+                <h3 class="font-headline-md text-headline-md text-text-primary leading-tight">
+                  Inicia Sesión o Regístrate para Rendir Pruebas Diagnósticas Gratuitas
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+                  ¿No estás seguro de cuál es tu nivel? Accede al campus virtual de EduFlow de forma gratuita y realiza
+                  nuestras evaluaciones de diagnóstico técnico para saber si estás listo para el examen SEC, protocolos
+                  MINSAL o desarrollo Full-Stack.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm my-space-md">
+                  <div class="p-space-sm bg-surface-card rounded-lg shadow-sm">
+                    <span class="font-label-sm text-label-sm text-primary block">Test Diagnóstico SEC</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">25 preguntas sobre el Pliego Técnico
+                      RIC</span>
+                  </div>
+                  <div class="p-space-sm bg-surface-card rounded-lg shadow-sm">
+                    <span class="font-label-sm text-label-sm text-secondary block">Test Primeros Auxilios</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Evaluación de conceptos BLS &
+                      MINSAL</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-space-sm flex flex-col sm:flex-row gap-space-sm">
+                <a class="px-space-lg py-space-sm rounded-lg font-label-md text-label-md bg-primary-container text-on-primary hover:bg-primary transition-colors text-center shadow-sm"
+                  data-path="registro" href="#">
+                  Crear Cuenta Estudiante Gratuita
+                </a>
+                <a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors text-center"
+                  data-path="iniciar-sesion" href="{% url 'login' %}">
+                  Ingresar al Aula Virtual
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Interactive Script for Instant Filtering & UI Ergonomics -->
+      <script>
+        (function () {
+          const searchInput = document.getElementById('course-search-input');
+          const searchBtn = document.getElementById('search-btn');
+          const areaFilter = document.getElementById('area-filter');
+          const certFilter = document.getElementById('cert-filter');
+          const durationFilter = document.getElementById('duration-filter');
+          const sortSelect = document.getElementById('sort-select');
+          const chips = document.querySelectorAll('.filter-chip');
+          const cards = document.querySelectorAll('.course-card');
+          const noResults = document.getElementById('no-results-msg');
+          const resetBtn = document.getElementById('reset-filters-btn');
+          let currentCategory = 'all';
+
+          function applyFilters() {
+            const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+            const selectedArea = areaFilter ? areaFilter.value : 'all';
+            const selectedCert = certFilter ? certFilter.value : 'all';
+            const selectedDuration = durationFilter ? durationFilter.value : 'all';
+
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+              const category = card.getAttribute('data-category');
+              const isSence = card.getAttribute('data-sence') === 'true';
+              const isSec = card.getAttribute('data-sec') === 'true';
+              const hours = parseInt(card.getAttribute('data-hours') || '0', 10);
+              const cardText = card.textContent.toLowerCase();
+
+              // Match Category / Chip
+              let matchCategory = (currentCategory === 'all') ||
+                (currentCategory === 'sence' && isSence) ||
+                (currentCategory === category);
+
+              // Match Dropdown Area
+              let matchArea = (selectedArea === 'all') || (selectedArea === category);
+
+              // Match Certification dropdown
+              let matchCert = true;
+              if (selectedCert === 'sence') matchCert = isSence;
+              else if (selectedCert === 'sec') matchCert = isSec;
+              else if (selectedCert === 'minsal') matchCert = cardText.includes('minsal') || cardText.includes('bls');
+
+              // Match Duration
+              let matchDuration = true;
+              if (selectedDuration === 'corta') matchDuration = hours <= 45;
+              else if (selectedDuration === 'media') matchDuration = hours > 45 && hours <= 75;
+              else if (selectedDuration === 'larga') matchDuration = hours > 75;
+
+              // Match Text Query
+              let matchQuery = !query || cardText.includes(query);
+
+              if (matchCategory && matchArea && matchCert && matchDuration && matchQuery) {
+                card.classList.remove('hidden');
+                visibleCount++;
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+
+            if (noResults) {
+              if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+              } else {
+                noResults.classList.add('hidden');
+              }
+            }
+          }
+
+          // Chip filters click
+          chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+              chips.forEach(c => {
+                c.classList.remove('bg-primary', 'text-on-primary');
+                c.classList.add('bg-surface-container', 'text-on-surface');
+              });
+              chip.classList.remove('bg-surface-container', 'text-on-surface');
+              chip.classList.add('bg-primary', 'text-on-primary');
+              currentCategory = chip.getAttribute('data-category');
+
+              if (areaFilter && currentCategory !== 'all' && currentCategory !== 'sence') {
+                areaFilter.value = currentCategory;
+              } else if (areaFilter && currentCategory === 'all') {
+                areaFilter.value = 'all';
+              }
+
+              applyFilters();
+            });
+          });
+
+          // Search listeners
+          if (searchInput) {
+            searchInput.addEventListener('input', applyFilters);
+            searchInput.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter') applyFilters();
+            });
+          }
+
+          if (searchBtn) searchBtn.addEventListener('click', applyFilters);
+          if (areaFilter) areaFilter.addEventListener('change', () => {
+            currentCategory = areaFilter.value;
+            chips.forEach(c => {
+              if (c.getAttribute('data-category') === currentCategory) {
+                c.classList.remove('bg-surface-container', 'text-on-surface');
+                c.classList.add('bg-primary', 'text-on-primary');
+              } else {
+                c.classList.remove('bg-primary', 'text-on-primary');
+                c.classList.add('bg-surface-container', 'text-on-surface');
+              }
+            });
+            applyFilters();
+          });
+
+          if (certFilter) certFilter.addEventListener('change', applyFilters);
+          if (durationFilter) durationFilter.addEventListener('change', applyFilters);
+
+          // Sorting
+          if (sortSelect) {
+            sortSelect.addEventListener('change', () => {
+              const grid = document.getElementById('course-grid');
+              if (!grid) return;
+              const sortVal = sortSelect.value;
+              const cardArray = Array.from(cards);
+
+              cardArray.sort((a, b) => {
+                const priceA = parseInt(a.getAttribute('data-price') || '0', 10);
+                const priceB = parseInt(b.getAttribute('data-price') || '0', 10);
+                const hoursA = parseInt(a.getAttribute('data-hours') || '0', 10);
+                const hoursB = parseInt(b.getAttribute('data-hours') || '0', 10);
+
+                if (sortVal === 'price-asc') return priceA - priceB;
+                if (sortVal === 'price-desc') return priceB - priceA;
+                if (sortVal === 'hours') return hoursB - hoursA;
+                return 0; // default
+              });
+
+              cardArray.forEach(c => grid.appendChild(c));
+            });
+          }
+
+          // Reset
+          if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+              if (searchInput) searchInput.value = '';
+              if (areaFilter) areaFilter.value = 'all';
+              if (certFilter) certFilter.value = 'all';
+              if (durationFilter) durationFilter.value = 'all';
+              currentCategory = 'all';
+              chips.forEach(c => {
+                if (c.getAttribute('data-category') === 'all') {
+                  c.classList.add('bg-primary', 'text-on-primary');
+                } else {
+                  c.classList.remove('bg-primary', 'text-on-primary');
+                  c.classList.add('bg-surface-container', 'text-on-surface');
+                }
+              });
+              applyFilters();
+            });
+          }
+
+          // Bookmark / Favorite buttons micro-toggle
+          document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const icon = btn.querySelector('.material-symbols-outlined');
+              if (icon) {
+                const isFilled = icon.style.fontVariationSettings?.includes("'FILL' 1");
+                if (isFilled) {
+                  icon.style.fontVariationSettings = "'FILL' 0";
+                  btn.classList.remove('text-primary');
+                  btn.classList.add('text-text-muted');
+                } else {
+                  icon.style.fontVariationSettings = "'FILL' 1";
+                  btn.classList.remove('text-text-muted');
+                  btn.classList.add('text-primary');
+                }
+              }
+            });
+          });
+
+        })();
+      </script>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-lowest border-t border-border-subtle py-space-xl mt-space-xl">
+    <div class="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl">
+        <div class="space-y-space-sm md:col-span-1">
+          <div class="flex items-center gap-space-xs"><span
+              class="font-headline-sm text-headline-sm text-primary">EduFlow</span></div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Plataforma líder en formación técnica superior y
+            certificación ocupacional para profesionales e industrias estratégicas.</p>
+        </div>
+        <div class="space-y-space-xs">
+          <h4 class="font-label-md text-label-md text-on-surface">Programas</h4>
+          <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <li><a class="hover:text-primary transition-colors" data-path="cursos" href="#">Catálogo de Cursos</a></li>
+            <li><a class="hover:text-primary transition-colors" data-path="carreras-tecnicas" href="#">Mallas
+                Curriculares</a></li>
+            <li><a class="hover:text-primary transition-colors" data-path="certificaciones" href="#">Certificaciones
+                Oficiales</a></li>
+          </ul>
+        </div>
+        <div class="space-y-space-xs">
+          <h4 class="font-label-md text-label-md text-on-surface">Institucional</h4>
+          <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+            <li><a class="hover:text-primary transition-colors" data-path="empresas" href="#">Alianzas Corporativas</a>
+            </li>
+            <li><a class="hover:text-primary transition-colors" href="#">Marco de Cualificaciones</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Portal de Transparencia</a></li>
+          </ul>
+        </div>
+        <div class="space-y-space-sm">
+          <h4 class="font-label-md text-label-md text-on-surface">Acreditación y Alianzas</h4>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Programas articulados con franquicia SENCE,
+            estándares ChileValora y reconocimiento de competencias laborales Mineduc.</p>
+          <div class="flex flex-wrap gap-space-xs pt-space-xs"><span
+              class="px-space-sm py-space-xs bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-border-subtle">SENCE</span><span
+              class="px-space-sm py-space-xs bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-border-subtle">ChileValora</span><span
+              class="px-space-sm py-space-xs bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-border-subtle">Mineduc</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pt-space-lg border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant">
+        <p class="font-body-sm text-body-sm">© 2025 EduFlow Capacitación Continua S.A. Todos los derechos reservados.
+        </p>
+        <div class="flex items-center gap-space-lg font-body-sm text-body-sm"><a
+            class="hover:text-on-surface transition-colors" href="#">Términos de Servicio</a><a
+            class="hover:text-on-surface transition-colors" href="#">Privacidad</a><a
+            class="hover:text-on-surface transition-colors" href="#">Soporte Académico</a></div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

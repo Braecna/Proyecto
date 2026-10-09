@@ -1,5 +1,4 @@
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, get_user_model, login
 from django.shortcuts import redirect, render
 
 # Create your views here.
@@ -10,7 +9,17 @@ def login_view(request):
     if request.method == 'POST':
         email = request.POST.get('email', '').strip()
         password = request.POST.get('password', '')
-        user = authenticate(request, username=email, password=password)
+        user_model = get_user_model()
+        try:
+            account = user_model._default_manager.get(email__iexact=email)
+            username = account.get_username()
+        except (user_model.DoesNotExist, user_model.MultipleObjectsReturned):
+            username = email
+
+        user = authenticate(
+            request,
+            **{user_model.USERNAME_FIELD: username, 'password': password},
+        )
 
         if user is not None:
             login(request, user)
@@ -22,8 +31,6 @@ def login_view(request):
 
     return render(request, 'login.html')
 
-
-@login_required(login_url='login')
 def inicio(request):
     return render(request, 'inicio.html')
 

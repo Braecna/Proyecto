@@ -19,8 +19,9 @@ from django.urls import path
 from cursos_app.views import inicio, login_view, pagina_no_encontrada
 
 urlpatterns = [
-    path('', login_view, name='login'),
-    path('inicio/', inicio, name='inicio'),
+
+    path('', inicio, name='inicio'),
+    path('login/', login_view, name='login'),
     path('admin/', admin.site.urls),
     path('<path:ruta_inexistente>', pagina_no_encontrada, name='pagina_no_encontrada'),
     ]
