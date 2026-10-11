@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import curso, encargado_curso, categoria, Inscripcion, contenido_curso, pais, Idioma
+from .models import curso, encargado_curso, categoria, Inscripcion, contenido_curso, pais, Idioma, clientes, provincia, region
 
 class cursoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,4 +34,19 @@ class paisSerializer(serializers.ModelSerializer):
 class IdiomaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Idioma
+        fields = '__all__'
+
+class clientesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = clientes
+        fields = '__all__'
+
+class provinciaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = provincia
+        fields = '__all__'
+
+class regionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = region
         fields = '__all__'

@@ -1,0 +1,130 @@
+[
+    {
+        "model": "cursos_app.region",
+        "pk": 1,
+        "fields": {
+            "nombre_region": "Tarapacá",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 2,
+        "fields": {
+            "nombre_region": "Antofagasta",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 3,
+        "fields": {
+            "nombre_region": "Atacama",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 4,
+        "fields": {
+            "nombre_region": "Coquimbo",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 5,
+        "fields": {
+            "nombre_region": "Valparaíso",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 6,
+        "fields": {
+            "nombre_region": "Libertador General Bernardo O'",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 7,
+        "fields": {
+            "nombre_region": "Maule",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 8,
+        "fields": {
+            "nombre_region": "Biobío",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 9,
+        "fields": {
+            "nombre_region": "La Araucanía",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 10,
+        "fields": {
+            "nombre_region": "Los Lagos",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 11,
+        "fields": {
+            "nombre_region": "Aysén del General Carlos Ibáñe",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 12,
+        "fields": {
+            "nombre_region": "Magallanes y de la Antártica C",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 13,
+        "fields": {
+            "nombre_region": "Metropolitana de Santiago",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 14,
+        "fields": {
+            "nombre_region": "Los Ríos",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 15,
+        "fields": {
+            "nombre_region": "Arica y Parinacota",
+            "pais": 43
+        }
+    },
+    {
+        "model": "cursos_app.region",
+        "pk": 16,
+        "fields": {
+            "nombre_region": "Ñuble",
+            "pais": 43
+        }
+    }
+]

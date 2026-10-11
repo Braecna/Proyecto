@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from cursos_app.views import inicio, login_view, pagina_no_encontrada
 
 urlpatterns = [
@@ -23,5 +23,6 @@ urlpatterns = [
     path('', inicio, name='inicio'),
     path('login/', login_view, name='login'),
     path('admin/', admin.site.urls),
+    path('api/', include('cursos_app.urls')),
     path('<path:ruta_inexistente>', pagina_no_encontrada, name='pagina_no_encontrada'),
     ]

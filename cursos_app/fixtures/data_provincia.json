@@ -1,0 +1,506 @@
+[
+    {
+        "model": "cursos_app.provincia",
+        "pk": 1,
+        "fields": {
+            "nombre_provincia": "Iquique",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 2,
+        "fields": {
+            "nombre_provincia": "Tamarugal",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 3,
+        "fields": {
+            "nombre_provincia": "Antofagasta",
+            "region": 2,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 4,
+        "fields": {
+            "nombre_provincia": "El Loa",
+            "region": 2,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 5,
+        "fields": {
+            "nombre_provincia": "Tocopilla",
+            "region": 2,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 6,
+        "fields": {
+            "nombre_provincia": "Copiapó",
+            "region": 3,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 7,
+        "fields": {
+            "nombre_provincia": "Chañaral",
+            "region": 3,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 8,
+        "fields": {
+            "nombre_provincia": "Huasco",
+            "region": 3,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 9,
+        "fields": {
+            "nombre_provincia": "Elqui",
+            "region": 4,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 10,
+        "fields": {
+            "nombre_provincia": "Choapa",
+            "region": 4,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 11,
+        "fields": {
+            "nombre_provincia": "Limarí",
+            "region": 4,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 12,
+        "fields": {
+            "nombre_provincia": "Valparaíso",
+            "region": 5,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 13,
+        "fields": {
+            "nombre_provincia": "Isla de Pascua",
+            "region": 5,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 14,
+        "fields": {
+            "nombre_provincia": "Los Andes",
+            "region": 5,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 15,
+        "fields": {
+            "nombre_provincia": "Petorca",
+            "region": 5,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 16,
+        "fields": {
+            "nombre_provincia": "Quillota",
+            "region": 5,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 17,
+        "fields": {
+            "nombre_provincia": "San Antonio",
+            "region": 5,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 18,
+        "fields": {
+            "nombre_provincia": "San Felipe de Aconcagua",
+            "region": 5,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 19,
+        "fields": {
+            "nombre_provincia": "Marga Marga",
+            "region": 5,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 20,
+        "fields": {
+            "nombre_provincia": "Cachapoal",
+            "region": 6,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 21,
+        "fields": {
+            "nombre_provincia": "Cardenal Caro",
+            "region": 6,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 22,
+        "fields": {
+            "nombre_provincia": "Malleco",
+            "region": 9,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 23,
+        "fields": {
+            "nombre_provincia": "Colchagua",
+            "region": 6,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 24,
+        "fields": {
+            "nombre_provincia": "Talca",
+            "region": 7,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 25,
+        "fields": {
+            "nombre_provincia": "Cauquenes",
+            "region": 7,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 26,
+        "fields": {
+            "nombre_provincia": "Curicó",
+            "region": 7,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 27,
+        "fields": {
+            "nombre_provincia": "Linares",
+            "region": 7,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 28,
+        "fields": {
+            "nombre_provincia": "Concepción",
+            "region": 8,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 29,
+        "fields": {
+            "nombre_provincia": "Arauco",
+            "region": 8,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 30,
+        "fields": {
+            "nombre_provincia": "Biobío",
+            "region": 8,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 31,
+        "fields": {
+            "nombre_provincia": "Cautín",
+            "region": 9,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 32,
+        "fields": {
+            "nombre_provincia": "Llanquihue",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 33,
+        "fields": {
+            "nombre_provincia": "Chiloé",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 34,
+        "fields": {
+            "nombre_provincia": "Osorno",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 35,
+        "fields": {
+            "nombre_provincia": "Palena",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 36,
+        "fields": {
+            "nombre_provincia": "Coyhaique",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 37,
+        "fields": {
+            "nombre_provincia": "Aysén",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 38,
+        "fields": {
+            "nombre_provincia": "Capitán Prat",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 39,
+        "fields": {
+            "nombre_provincia": "General Carrera",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 40,
+        "fields": {
+            "nombre_provincia": "Magallanes",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 41,
+        "fields": {
+            "nombre_provincia": "Antártica Chilena",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 42,
+        "fields": {
+            "nombre_provincia": "Tierra del Fuego",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 43,
+        "fields": {
+            "nombre_provincia": "Última Esperanza",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 44,
+        "fields": {
+            "nombre_provincia": "Santiago",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 45,
+        "fields": {
+            "nombre_provincia": "Cordillera",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 46,
+        "fields": {
+            "nombre_provincia": "Chacabuco",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 47,
+        "fields": {
+            "nombre_provincia": "Maipo",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 48,
+        "fields": {
+            "nombre_provincia": "Melipilla",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 49,
+        "fields": {
+            "nombre_provincia": "Talagante",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 50,
+        "fields": {
+            "nombre_provincia": "Valdivia",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 51,
+        "fields": {
+            "nombre_provincia": "Ranco",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 52,
+        "fields": {
+            "nombre_provincia": "Arica",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 53,
+        "fields": {
+            "nombre_provincia": "Parinacota",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 54,
+        "fields": {
+            "nombre_provincia": "Diguillín",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 55,
+        "fields": {
+            "nombre_provincia": "Itata",
+            "region": 1,
+            "habilitado": true
+        }
+    },
+    {
+        "model": "cursos_app.provincia",
+        "pk": 56,
+        "fields": {
+            "nombre_provincia": "Punilla",
+            "region": 1,
+            "habilitado": true
+        }
+    }
+]
