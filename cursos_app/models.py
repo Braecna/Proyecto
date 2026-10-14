@@ -66,7 +66,9 @@ class provincia(models.Model):
 
 class Idioma(models.Model):
     idioma_id= models.AutoField(primary_key=True)
-    nombre_idioma = models.CharField(max_length=100, null=False)
+    sigla = models.CharField(max_length=100, null=False)
+    nombre_espanol = models.CharField(max_length=100, null=False)
+    nombre_nativo = models.CharField(max_length=100, null=False)
     class Meta:
         db_table_comment = "Tabla de idiomas"
 

@@ -43,7 +43,7 @@
         "model": "cursos_app.region",
         "pk": 6,
         "fields": {
-            "nombre_region": "Libertador General Bernardo O'",
+            "nombre_region": "Libertador General Bernardo O'Higgins",
             "pais": 43
         }
     },
@@ -83,7 +83,7 @@
         "model": "cursos_app.region",
         "pk": 11,
         "fields": {
-            "nombre_region": "Aysén del General Carlos Ibáñe",
+            "nombre_region": "Aysén del General Carlos Ibáñez del Campo",
             "pais": 43
         }
     },
@@ -91,7 +91,7 @@
         "model": "cursos_app.region",
         "pk": 12,
         "fields": {
-            "nombre_region": "Magallanes y de la Antártica C",
+            "nombre_region": "Magallanes y de la Antártica Chilena",
             "pais": 43
         }
     },

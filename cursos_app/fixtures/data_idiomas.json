@@ -1,1 +1,137 @@
-[]
+[
+    {
+        "model": "cursos_app.idioma",
+        "pk": 1,
+        "fields": {
+            "sigla": "es",
+            "nombre_espanol": "Español",
+            "nombre_nativo": "Español"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 2,
+        "fields": {
+            "sigla": "en",
+            "nombre_espanol": "Inglés",
+            "nombre_nativo": "English"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 3,
+        "fields": {
+            "sigla": "fr",
+            "nombre_espanol": "Francés",
+            "nombre_nativo": "Français"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 4,
+        "fields": {
+            "sigla": "de",
+            "nombre_espanol": "Alemán",
+            "nombre_nativo": "Deutsch"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 5,
+        "fields": {
+            "sigla": "it",
+            "nombre_espanol": "Italiano",
+            "nombre_nativo": "Italiano"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 6,
+        "fields": {
+            "sigla": "pt",
+            "nombre_espanol": "Portugués",
+            "nombre_nativo": "Português"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 7,
+        "fields": {
+            "sigla": "zh",
+            "nombre_espanol": "Chino",
+            "nombre_nativo": "中文"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 8,
+        "fields": {
+            "sigla": "ja",
+            "nombre_espanol": "Japonés",
+            "nombre_nativo": "日本語"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 9,
+        "fields": {
+            "sigla": "ko",
+            "nombre_espanol": "Coreano",
+            "nombre_nativo": "한국어"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 10,
+        "fields": {
+            "sigla": "ru",
+            "nombre_espanol": "Ruso",
+            "nombre_nativo": "Русский"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 11,
+        "fields": {
+            "sigla": "ar",
+            "nombre_espanol": "Árabe",
+            "nombre_nativo": "العربية"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 12,
+        "fields": {
+            "sigla": "hi",
+            "nombre_espanol": "Hindi",
+            "nombre_nativo": "हिन्दी"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 13,
+        "fields": {
+            "sigla": "nl",
+            "nombre_espanol": "Neerlandés",
+            "nombre_nativo": "Nederlands"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 14,
+        "fields": {
+            "sigla": "sv",
+            "nombre_espanol": "Sueco",
+            "nombre_nativo": "Svenska"
+        }
+    },
+    {
+        "model": "cursos_app.idioma",
+        "pk": 15,
+        "fields": {
+            "sigla": "tr",
+            "nombre_espanol": "Turco",
+            "nombre_nativo": "Türkçe"
+        }
+    }
+]
