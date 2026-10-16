@@ -283,7 +283,7 @@
         "pk": 32,
         "fields": {
             "nombre_provincia": "Llanquihue",
-            "region": 1,
+            "region": 10,
             "habilitado": true
         }
     },
@@ -292,7 +292,7 @@
         "pk": 33,
         "fields": {
             "nombre_provincia": "Chiloé",
-            "region": 1,
+            "region": 10,
             "habilitado": true
         }
     },
@@ -301,7 +301,7 @@
         "pk": 34,
         "fields": {
             "nombre_provincia": "Osorno",
-            "region": 1,
+            "region": 10,
             "habilitado": true
         }
     },
@@ -310,7 +310,7 @@
         "pk": 35,
         "fields": {
             "nombre_provincia": "Palena",
-            "region": 1,
+            "region": 10,
             "habilitado": true
         }
     },
@@ -319,7 +319,7 @@
         "pk": 36,
         "fields": {
             "nombre_provincia": "Coyhaique",
-            "region": 1,
+            "region": 11,
             "habilitado": true
         }
     },
@@ -328,7 +328,7 @@
         "pk": 37,
         "fields": {
             "nombre_provincia": "Aysén",
-            "region": 1,
+            "region": 11,
             "habilitado": true
         }
     },
@@ -337,7 +337,7 @@
         "pk": 38,
         "fields": {
             "nombre_provincia": "Capitán Prat",
-            "region": 1,
+            "region": 11,
             "habilitado": true
         }
     },
@@ -346,7 +346,7 @@
         "pk": 39,
         "fields": {
             "nombre_provincia": "General Carrera",
-            "region": 1,
+            "region": 11,
             "habilitado": true
         }
     },
@@ -355,7 +355,7 @@
         "pk": 40,
         "fields": {
             "nombre_provincia": "Magallanes",
-            "region": 1,
+            "region": 12,
             "habilitado": true
         }
     },
@@ -364,7 +364,7 @@
         "pk": 41,
         "fields": {
             "nombre_provincia": "Antártica Chilena",
-            "region": 1,
+            "region": 12,
             "habilitado": true
         }
     },
@@ -373,7 +373,7 @@
         "pk": 42,
         "fields": {
             "nombre_provincia": "Tierra del Fuego",
-            "region": 1,
+            "region": 12,
             "habilitado": true
         }
     },
@@ -382,7 +382,7 @@
         "pk": 43,
         "fields": {
             "nombre_provincia": "Última Esperanza",
-            "region": 1,
+            "region": 12,
             "habilitado": true
         }
     },
@@ -391,7 +391,7 @@
         "pk": 44,
         "fields": {
             "nombre_provincia": "Santiago",
-            "region": 1,
+            "region": 13,
             "habilitado": true
         }
     },
@@ -400,7 +400,7 @@
         "pk": 45,
         "fields": {
             "nombre_provincia": "Cordillera",
-            "region": 1,
+            "region": 13,
             "habilitado": true
         }
     },
@@ -409,7 +409,7 @@
         "pk": 46,
         "fields": {
             "nombre_provincia": "Chacabuco",
-            "region": 1,
+            "region": 13,
             "habilitado": true
         }
     },
@@ -418,7 +418,7 @@
         "pk": 47,
         "fields": {
             "nombre_provincia": "Maipo",
-            "region": 1,
+            "region": 13,
             "habilitado": true
         }
     },
@@ -427,7 +427,7 @@
         "pk": 48,
         "fields": {
             "nombre_provincia": "Melipilla",
-            "region": 1,
+            "region": 13,
             "habilitado": true
         }
     },
@@ -436,7 +436,7 @@
         "pk": 49,
         "fields": {
             "nombre_provincia": "Talagante",
-            "region": 1,
+            "region": 13,
             "habilitado": true
         }
     },
@@ -445,7 +445,7 @@
         "pk": 50,
         "fields": {
             "nombre_provincia": "Valdivia",
-            "region": 1,
+            "region": 14,
             "habilitado": true
         }
     },
@@ -454,7 +454,7 @@
         "pk": 51,
         "fields": {
             "nombre_provincia": "Ranco",
-            "region": 1,
+            "region": 14,
             "habilitado": true
         }
     },
@@ -463,7 +463,7 @@
         "pk": 52,
         "fields": {
             "nombre_provincia": "Arica",
-            "region": 1,
+            "region": 15,
             "habilitado": true
         }
     },
@@ -472,7 +472,7 @@
         "pk": 53,
         "fields": {
             "nombre_provincia": "Parinacota",
-            "region": 1,
+            "region": 15,
             "habilitado": true
         }
     },
@@ -481,7 +481,7 @@
         "pk": 54,
         "fields": {
             "nombre_provincia": "Diguillín",
-            "region": 1,
+            "region": 16,
             "habilitado": true
         }
     },
@@ -490,7 +490,7 @@
         "pk": 55,
         "fields": {
             "nombre_provincia": "Itata",
-            "region": 1,
+            "region": 16,
             "habilitado": true
         }
     },
@@ -499,7 +499,7 @@
         "pk": 56,
         "fields": {
             "nombre_provincia": "Punilla",
-            "region": 1,
+            "region": 16,
             "habilitado": true
         }
     }
