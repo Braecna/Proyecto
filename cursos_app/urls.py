@@ -16,4 +16,6 @@ enrutador.register(r'clientes', views.clientesViewSet)
 enrutador.register(r'provincia', views.provinciaViewSet)
 
 urlpatterns = [
-    path('', include(enrutador.urls)),]
+    path('', include(enrutador.urls)),
+    path('paises/lista_pais',views.paisListView.as_view(), name='lista_pais')
+]

@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from .models import curso, encargado_curso, categoria, Inscripcion, contenido_curso, pais, Idioma, clientes, provincia, region
 from .serializer import cursoSerializer, encargado_cursoSerializer, categoriaSerializer, InscripcionSerializer, contenido_cursoSerializer, paisSerializer, IdiomaSerializer, clientesSerializer, provinciaSerializer, regionSerializer
 from rest_framework import viewsets
+from django.views.generic import ListView
 # Create your views here.
 def login_view(request):
     if request.user.is_authenticated:
@@ -58,9 +59,14 @@ class InscripcionViewSet(viewsets.ModelViewSet):
 class contenido_cursoViewSet(viewsets.ModelViewSet):
     queryset = contenido_curso.objects.all()
     serializer_class = contenido_cursoSerializer
+
 class paisViewSet(viewsets.ModelViewSet):
     queryset = pais.objects.all()
     serializer_class = paisSerializer
+class paisListView(ListView):
+    model = pais
+    template_name = 'cursos_app/templates/cursos_app/paises/pais_list.html'
+    
 class IdiomaViewSet(viewsets.ModelViewSet):
     queryset = Idioma.objects.all()
     serializer_class = IdiomaSerializer
