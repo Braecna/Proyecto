@@ -1,11 +1,42 @@
-{% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<h1>Lista de Paises</h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Pais</th>
-    </tr>
-</table>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block titulo %}
+    <title>Listado de Paises</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/lista.png' %}" type="image/x-icon">
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    {% block script %} {% endblock %}
+</head>
+
+
+<body>
+    <nav>
+        <div class="logo">
+            <span>⚙</span>Mantención
+        </div>
+        <div class"inks">
+            <a href="#">Inicio</a>
+            <a href="#">Usuarios</a>
+            <a href="#">Cursos</a>
+        </div>
+    </nav>
+    <h1>Lista de Paises</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Pais</th>
+        </tr>
+    </table>
+</body>
+
+</html>
 {% endblock %}

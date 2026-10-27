@@ -65,7 +65,7 @@ class paisViewSet(viewsets.ModelViewSet):
     serializer_class = paisSerializer
 class paisListView(ListView):
     model = pais
-    template_name = 'cursos_app/templates/cursos_app/paises/pais_list.html'
+    template_name = 'cursos_app/paises/pais_list.html'
     
 class IdiomaViewSet(viewsets.ModelViewSet):
     queryset = Idioma.objects.all()
