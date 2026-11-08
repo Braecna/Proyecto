@@ -1,6 +1,7 @@
 {% load static %}
-{% block content %}
-<html>
+
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,34 +10,132 @@
     {% block titulo %}
     <title>Listado de Paises</title>
     {% endblock %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/flatly.css' %}">
     <link rel="shortcut icon" href="{% static 'images/lista.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/datatables.css' %}">
+    <!--link rel="stylesheet" href="{% static 'css/estilos.css' %}"-->
+    {% block estilos %}{% endblock %}
+
 
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-    {% block script %} {% endblock %}
+    <script src="{% static 'js/jquery_v4.0.0.js' %}"></script>
+    <script src="{% static 'js/datatables.js' %}"></script>
+    <script src="{% static 'js/datatables_default.js' %}"></script>
+    <script src="{% static 'js/cursos_app/paises/paises.js' %}"></script>
+    {% block script %}{% endblock %}
 </head>
 
 
 <body>
-    <nav>
-        <div class="logo">
-            <span>⚙</span>Mantención
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'inicio' %}">
+            ⚙ Mantención de Sitio Web
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuNavegacion"
+                aria-controls="menuNavegacion"
+                aria-expanded="false"
+                aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuNavegacion">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+                <a class="nav-link" href="#">Clientes</a>
+                <a class="nav-link" href="#">Cursos</a>
+                <a class="nav-link" href="#">Provincias</a>
+                <a class="nav-link" href="#">Idiomas</a>
+                <a class="nav-link" href="#">Inscripciones</a>
+                <a class="nav-link" href="#">Encargados</a>
+                <a class="nav-link" href="#">Categorías</a>
+            </div>
         </div>
-        <div class"inks">
-            <a href="#">Inicio</a>
-            <a href="#">Usuarios</a>
-            <a href="#">Cursos</a>
+    </div>
+</nav>
+    <main class="container">
+        <div class="hero-content">
+            <br>
+            {% block content %}
+
+            {% endblock %}
         </div>
-    </nav>
-    <h1>Lista de Paises</h1>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Pais</th>
-        </tr>
+    </main>
+
+    {% block scriptsPagina %}
+    {% endblock %}
+
+<div class="container">
+    <h3>Listado de Países</h3>
+    <br>
+
+    <table id="paises" class="table table-hover dt-left">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre País</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for pais in object_list %}
+            <tr>
+                <td>{{ pais.pais_id }}</td>
+                <td>{{ pais.nombre_pais }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Nombre País</th>
+            </tr>
+        </tfoot>
     </table>
+
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for pais in object_list %}
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-header">
+                        {{ pais.pais_id }} {{ pais.nombre_pais }}
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ pais.nombre_pais }}</h5>
+                        <ul>
+                            <li>ID: {{ pais.pais_id }}</li>
+                            <li>Nombre: {{ pais.nombre_pais }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-footer text-body-secondary">
+                        {{ pais.nombre_pais }}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-header">Países</div>
+                    <div class="card-body">
+                        <h5 class="card-title">No hay datos</h5>
+                        <p class="card-text">No se han encontrado países.</p>
+                    </div>
+                    <div class="card-footer text-body-secondary">Países</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
-{% endblock %}

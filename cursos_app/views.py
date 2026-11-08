@@ -4,6 +4,8 @@ from .models import curso, encargado_curso, categoria, Inscripcion, contenido_cu
 from .serializer import cursoSerializer, encargado_cursoSerializer, categoriaSerializer, InscripcionSerializer, contenido_cursoSerializer, paisSerializer, IdiomaSerializer, clientesSerializer, provinciaSerializer, regionSerializer
 from rest_framework import viewsets
 from django.views.generic import ListView
+from . import models as mod
+from . import serializer as ser
 # Create your views here.
 def login_view(request):
     if request.user.is_authenticated:
@@ -61,7 +63,7 @@ class contenido_cursoViewSet(viewsets.ModelViewSet):
     serializer_class = contenido_cursoSerializer
 
 class paisViewSet(viewsets.ModelViewSet):
-    queryset = pais.objects.all()
+    queryset = mod.pais.objects.all()
     serializer_class = paisSerializer
 class paisListView(ListView):
     model = pais
