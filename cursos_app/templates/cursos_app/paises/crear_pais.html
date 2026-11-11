@@ -10,22 +10,45 @@
 {% endblock %}
 
 {% block content %}
-
-<h1>Agregar Pais</h1>
-<br>
-
-<form action="" method="post">
-     <div class="row">
-        <div class="col">
-            <label for="pais_id" class="form-label">ID:</label>
-            <input type="text" class="form-control" id="pais_id" name="pais_id" value="ID Pais...">
-        </div>
-
-        <div class="col">
-            <label for="nombre_pais" class="form-label">Pais:</label>
-            <input type="url" class="form-control" id="nombre_pais" name="nombre_pais" value="Nombre Pais...">
-        </div>
-    </div>
+    <h1>Agregar Pais</h1>
     <br>
-</form>
+
+    <form action="" method="post">
+        <div class="row">
+            <div class="col">
+                <label for="pais_id" class="form-label">ID:</label>
+                <input type="text" class="form-control" id="pais_id" name="pais_id" value="ID Pais...">
+            </div>
+
+            <div class="col">
+                <label for="nombre_pais" class="form-label">Pais:</label>
+                <input type="url" class="form-control" id="nombre_pais" name="nombre_pais" value="Nombre Pais...">
+            </div>
+        </div>
+        <br>
+    </form>
+    <table id="paises" class="table table-hover dt-left">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre País</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for pais in object_list %}
+                <tr>
+                    <td>{{ pais.pais_id }}</td>
+                    <td>{{ pais.nombre_pais }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre País</th>
+                </tr>
+            </tfoot>
+        </table>
 {% endblock %}

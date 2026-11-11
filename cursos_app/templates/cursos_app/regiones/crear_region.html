@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Crear Regiones</title>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/cursos_app/regiones/regiones.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Agregar Región</h1>
+    <br>
+
+    <form action="" method="post">
+        <div class="row">
+            <div class="col">
+                <label for="region_id" class="form-label">ID:</label>
+                <input type="text" class="form-control" id="region_id" name="region_id" value="ID Región...">
+            </div>
+
+            <div class="col">
+                <label for="nombre_region" class="form-label">Región:</label>
+                <input type="text" class="form-control" id="nombre_region" name="nombre_region" value="Nombre Región...">
+            </div>
+
+            <div class="col">
+                <label for="pais" class="form-label">País:</label>
+                <input type="text" class="form-control" id="pais" name="pais" value="Nombre País...">
+            </div>
+        </div>
+        <br>
+    </form>
+    <table id="regiones" class="table table-hover dt-left">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre Región</th>
+                    <th>Pais</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for region in object_list %}
+                <tr>
+                    <td>{{ region.region_id }}</td>
+                    <td>{{ region.nombre_region }}</td>
+                    <td>{{ region.pais }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre Región</th>
+                    <th>Pais</th>
+                </tr>
+            </tfoot>
+        </table>
+{% endblock %}

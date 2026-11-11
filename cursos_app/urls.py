@@ -21,8 +21,8 @@ urlpatterns = [
     path('paises/crear_pais',views.paisCreateView.as_view(),name='crear_pais'),
     #path('Clientes/lista_usuario',views.usuarioCreateView.as_view(),name='lista_usuario')pass,
     #path('Clientes/crear_usuario',views.usuarioCreateView.as_view(),name='crear_usuario')pass,
-    #path('region/lista_region',views.regionCreateView.as_view(),name='lista_region')pass,
-    #path('region/crear_region',views.regionCreateView.as_view(),name='crear_region')pass,
+    path('regiones/lista_region',views.regionesListView.as_view(),name='lista_region'),
+    path('regiones/crear_region',views.regionesCreateView.as_view(),name='crear_region'),
     path('provincias/lista_provincia',views.provinciaListView.as_view(),name='lista_provincia'),
     path('provincias/crear_provincia',views.provinciaCreateView.as_view(),name='crear_provincia'),
 ]

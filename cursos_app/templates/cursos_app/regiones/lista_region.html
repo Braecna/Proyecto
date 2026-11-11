@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+<title>Listar Regiones</title>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/cursos_app/regiones/regiones.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h3>Listado de Regiones</h3>
+    <br>
+
+    <table id="regiones" class="table table-hover dt-left">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre Región</th>
+                <th>País</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for region in object_list %}
+            <tr>
+                <td>{{ region.region_id }}</td>
+                <td>{{ region.nombre_region }}</td>
+                <td>{{ region.pais.nombre_pais }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Nombre Región</th>
+                <th>País</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for region in object_list %}
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-header">
+                        {{ region.region_id }} {{ region.nombre_region }} {{ region.pais.nombre_pais }}
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ region.nombre_region }}</h5>
+                        <ul>
+                            <li>ID: {{ region.region_id }}</li>
+                            <li>Nombre: {{ region.nombre_region }}</li>
+                            <li>País: {{ region.pais.nombre_pais }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-footer text-body-secondary">
+                        {{ region.nombre_region }}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-header">Regiones</div>
+                    <div class="card-body">
+                        <h5 class="card-title">No hay datos</h5>
+                        <p class="card-text">No se han encontrado regiones.</p>
+                    </div>
+                    <div class="card-footer text-body-secondary">Regiones</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -96,10 +96,9 @@ class regionViewSet(viewsets.ModelViewSet):
     serializer_class = regionSerializer
 class regionesListView(ListView):
     model=mod.region
-    template_name='cursos/regiones/lista_region.html'
+    template_name='cursos_app/regiones/lista_region.html'
 class regionesCreateView(CreateView):
+    model=mod.region
     fields=['nombre_region','pais']
     template_name= 'cursos_app/regiones/crear_region.html'
-
-
 
