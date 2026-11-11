@@ -20,6 +20,7 @@ class curso(models.Model):
     categoria = models.ForeignKey(categoria, on_delete=models.CASCADE)
     fecha_inicio = models.DateField(null=False)
     fecha_termino = models.DateField(null=False)
+    tiempo_ejecucion = models.CharField(max_length=10, null=False)
     valor_curso = models.DecimalField(max_digits=10, decimal_places=2, null=False)
     descripcion = models.TextField(null=False)
     encargado = models.ForeignKey(encargado_curso, on_delete=models.CASCADE, db_column='profesor')
@@ -80,3 +81,4 @@ class clientes(models.Model):
     telefono = models.CharField(max_length=20, null=False)
     class Meta:
         db_table_comment = "Tabla de clientes"
+

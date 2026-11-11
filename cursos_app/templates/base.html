@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block titulo %}
+    <title>Mantención de Sitio Web</title>
+    {% endblock %}
+
+    <link rel="stylesheet" href="{% static 'css/flatly.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/lista.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/datatables.css' %}">
+    {% block estilos %}{% endblock %}
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/jquery_v4.0.0.js' %}"></script>
+    <script src="{% static 'js/datatables.js' %}"></script>
+    <script src="{% static 'js/datatables_default.js' %}"></script>
+    {% block script %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'inicio' %}">
+                ⚙ Mantención de Sitio Web
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
+                aria-controls="menuNavegacion" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavegacion">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+                    <a class="nav-link" href="#">Clientes</a>
+                    <a class="nav-link" href="#">Cursos</a>
+                    <a class="nav-link" href="#">Pais</a>
+                    <a class="nav-link" href="#">Provincias</a>
+                    <a class="nav-link" href="#">Idiomas</a>
+                    <a class="nav-link" href="#">Inscripciones</a>
+                    <a class="nav-link" href="#">Encargados</a>
+                    <a class="nav-link" href="#">Categorías</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="hero-content">
+            <br>
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    {% block scriptsPagina %}{% endblock %}
+</body>
+</html>

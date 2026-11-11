@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Crear provincia</title>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block content %}
+
+<h1>Agregar Provincia</h1>
+<br>
+
+<form action="" method="post">
+    <div class="row">
+        <div class="col">
+            <label for="provincia_id" class="form-label">ID:</label>
+            <input type="text" class="form-control" id="provincia_id" name="provincia_id" value="ID...">
+        </div>
+
+        <div class="col">
+            <label for="nombre_provincia" class="form-label">Nombre Provincia:</label>
+            <input type="txt" class="form-control" id="nombre_provincia" name="nombre_provincia"
+                value="Nombre Provincia...">
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <label for="region" class="form-label">Region:</label>
+            <input type="region" class="form-control" id="region" name="region" value="Nombre Region...">
+        </div>
+
+        <div class="col">
+            <label for="habilitado" class="form-label">Estado:</label>
+            <select class="form-select" id="habilitado" name="habilitado">
+                <option value="true">Habilitado</option>
+                <option value="false">Deshabilitado</option>
+            </select>
+        </div>
+    </div>
+</form>
+{% endblock %}

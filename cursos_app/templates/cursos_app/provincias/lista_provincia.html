@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Listado de Provincias</title>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/cursos_app/provincias/provincias.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h3>Listado de Provincias</h3>
+        <br>
+
+        <table id="provincias" class="table table-hover dt-left">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Provincia</th>
+                    <th>Region</th>
+                    <th>Habilitado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for provincia in object_list %}
+                <tr>
+                    <td>{{ provincia.provincia_id }}</td>
+                    <td>{{ provincia.nombre_provincia }}</td>
+                    <td>{{ provincia.region_id }}</td>
+                    <td>{{ provincia.habilitado }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Provincia</th>
+                    <th>Region</th>
+                    <th>Habilitado</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="container my-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for provincia in object_list %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            {{ provincia.provincia_id }} {{ provincia.nombre_provincia }} {{ provincia.region_id }} {{ provincia.habilitado }}
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ provincia.nombre_provincia }}</h5>
+                            <ul>
+                                <li>ID: {{ provincia.provincia_id }}</li>
+                                <li>Nombre: {{ provincia.nombre_provincia }}</li>
+                                <li>Region: {{ provincia.region_id }}</li>
+                                <li>Habilitado: {{ provincia.habilitado }}</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-footer text-body-secondary">
+                            {{ provincia.nombre_provincia }}
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-header">Provincias</div>
+                        <div class="card-body">
+                            <h5 class="card-title">No hay datos</h5>
+                            <p class="card-text">No se han encontrado países.</p>
+                        </div>
+                        <div class="card-footer text-body-secondary">Países</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

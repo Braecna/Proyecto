@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from .models import curso, encargado_curso, categoria, Inscripcion, contenido_curso, pais, Idioma, clientes, provincia, region
 from .serializer import cursoSerializer, encargado_cursoSerializer, categoriaSerializer, InscripcionSerializer, contenido_cursoSerializer, paisSerializer, IdiomaSerializer, clientesSerializer, provinciaSerializer, regionSerializer
 from rest_framework import viewsets
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from . import models as mod
 from . import serializer as ser
 # Create your views here.
@@ -61,13 +61,17 @@ class InscripcionViewSet(viewsets.ModelViewSet):
 class contenido_cursoViewSet(viewsets.ModelViewSet):
     queryset = contenido_curso.objects.all()
     serializer_class = contenido_cursoSerializer
-
+#---------------------------PAISES------------------------------------
 class paisViewSet(viewsets.ModelViewSet):
     queryset = mod.pais.objects.all()
     serializer_class = paisSerializer
 class paisListView(ListView):
     model = pais
     template_name = 'cursos_app/paises/pais_list.html'
+class paisCreateView(CreateView):
+    model = mod.pais
+    fields = ['nombre_pais']
+    template_name = 'cursos_app/paises/crear_pais.html'
     
 class IdiomaViewSet(viewsets.ModelViewSet):
     queryset = Idioma.objects.all()
@@ -75,11 +79,27 @@ class IdiomaViewSet(viewsets.ModelViewSet):
 class clientesViewSet(viewsets.ModelViewSet):
     queryset = clientes.objects.all()
     serializer_class = clientesSerializer
+#---------------------------PROVINCIAS------------------------------------
 class provinciaViewSet(viewsets.ModelViewSet):
     queryset = provincia.objects.all()
     serializer_class = provinciaSerializer
+class provinciaListView(ListView):
+    model=mod.provincia
+    template_name = 'cursos_app/provincias/lista_provincia.html'
+class provinciaCreateView(CreateView):
+    model=mod.provincia
+    fields=['nombre_provincia','region','habilitado']
+    template_name= 'cursos_app/provincias/crear_provincia.html'
+#---------------------------REGIONES------------------------------------
 class regionViewSet(viewsets.ModelViewSet):
     queryset = region.objects.all()
     serializer_class = regionSerializer
+class regionesListView(ListView):
+    model=mod.region
+    template_name='cursos/regiones/lista_region.html'
+class regionesCreateView(CreateView):
+    fields=['nombre_region','pais']
+    template_name= 'cursos_app/regiones/crear_region.html'
+
 
 
