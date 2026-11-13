@@ -13,6 +13,9 @@
     <div class="container">
         <h3>Listado de Provincias</h3>
         <br>
+        <a href="{% url 'crear_provincia' %}"  type="button" class="btn btn-primary">Agregar Provincia</a>
+        <a href="{#}" type="button" class="btn btn-secondary">Eliminar Provincias</a>
+
 
         <table id="provincias" class="table table-hover dt-left">
             <thead>
@@ -51,7 +54,7 @@
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-header">
-                            {{ provincia.provincia_id }} {{ provincia.nombre_provincia }} {{ provincia.region_id }} {{ provincia.habilitado }}
+                            {{ provincia.provincia_id }} {{ provincia.nombre_provincia }} {{ provincia.region_id }} 
                         </div>
 
                         <div class="card-body">
