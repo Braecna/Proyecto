@@ -46,18 +46,37 @@ def pagina_no_encontrada(request, ruta_inexistente=None):
 
 
 #vistas basadas en clase
+#---------------------------REGIONES------------------------------------
 class cursoViewSet(viewsets.ModelViewSet):
     queryset = curso.objects.all()
     serializer_class = cursoSerializer
+class cursoListView(ListView):
+    model=curso
+    template_name='cursos_app/cursos/lista_curso.html'
+class cursoCreateView(CreateView):
+    model=mod.curso
+    fields=['n_curso','categoria','fecha_inicio','fecha_termino','tiempo_ejecucion','valor_curso','descripcion','encargado']
+    template_name='cursos_app/cursos/crear_curso.html'
+#---------------------------ENCARGADOS------------------------------------
 class encargado_cursoViewSet(viewsets.ModelViewSet):
     queryset = encargado_curso.objects.all()
     serializer_class = encargado_cursoSerializer
+#---------------------------CATEGORIA------------------------------------
 class categoriaViewSet(viewsets.ModelViewSet):
     queryset = categoria.objects.all()
     serializer_class = categoriaSerializer
+class categoriaListView(ListView):
+    model= categoria
+    template_name='cursos_app/categoria/lista_categoria.html'
+class categoriaCreateView(CreateView):
+    model=mod.categoria
+    fields=['n_categoria']
+    template_name='cursos_app/categoria/crear_categoria.html'
+#---------------------------INSCRIPCIONES------------------------------------
 class InscripcionViewSet(viewsets.ModelViewSet):
     queryset = Inscripcion.objects.all()
     serializer_class = InscripcionSerializer
+#---------------------------CONTENIDO_CURSO------------------------------------
 class contenido_cursoViewSet(viewsets.ModelViewSet):
     queryset = contenido_curso.objects.all()
     serializer_class = contenido_cursoSerializer
@@ -72,13 +91,21 @@ class paisCreateView(CreateView):
     model = mod.pais
     fields = ['nombre_pais']
     template_name = 'cursos_app/paises/crear_pais.html'
-    
+#---------------------------IDIOMAS------------------------------------
 class IdiomaViewSet(viewsets.ModelViewSet):
     queryset = Idioma.objects.all()
     serializer_class = IdiomaSerializer
+#---------------------------CLIENTES------------------------------------
 class clientesViewSet(viewsets.ModelViewSet):
     queryset = clientes.objects.all()
     serializer_class = clientesSerializer
+class clientesListView(ListView):
+    model=mod.clientes
+    template_name='cursos_app/clientes/lista_cliente.html'
+class clientesCreateView(CreateView):
+    model = clientes
+    fields = ['user', 'direccion', 'numero_domicilio', 'provincia', 'telefono']
+    template_name = 'cursos_app/clientes/crear_clientes.html'
 #---------------------------PROVINCIAS------------------------------------
 class provinciaViewSet(viewsets.ModelViewSet):
     queryset = provincia.objects.all()

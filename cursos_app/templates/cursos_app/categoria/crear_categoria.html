@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Crear Categoria</title>
+{% endblock %}
+
+{% block script %}
+<!--script src="{% static 'js/cursos_app/paises/paises.js' %}"></script-->
+{% endblock %}
+
+{% block content %}
+<h1>Agregar Categoria</h1>
+<br>
+
+<form action="" method="post">
+    <div class="row">
+        <div class="col">
+            <label for="categoria_id" class="form-label">ID:</label>
+            <input type="text" class="form-control" id="pais_id" name="pais_id" value="ID...">
+        </div>
+
+        <div class="col">
+            <label for="n_categoria" class="form-label">Nombre Categoria:</label>
+            <input type="text" class="form-control" id="n_categoria" name="nombre_pais" value="Nombre...">
+        </div>
+    </div>
+    <br>
+</form>
+<table id="categoria" class="table table-hover dt-left">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for categoria in object_list %}
+        <tr>
+            <td>{{ categoria.categoria_id }}</td>
+            <td>{{ categoria.n_categoria }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+        </tr>
+    </tfoot>
+</table>
+<div class="container my-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for categoria in object_list %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header">
+                    {{ categoria.categoria_id }} {{ categoria.n_categoria }} 
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ categoria.n_categoria }}</h5>
+                    <ul>
+                        <li>ID: {{ categoria.categoria_id }}</li>
+                        <li>Provincia: {{ categoria.n_categoria }}</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer text-body-secondary">
+                    {{ categoria.n_categoria }}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-header">Categoria</div>
+                <div class="card-body">
+                    <h5 class="card-title">No hay datos</h5>
+                    <p class="card-text">No se han encontrado Categorias.</p>
+                </div>
+                <div class="card-footer text-body-secondary">Categoria</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

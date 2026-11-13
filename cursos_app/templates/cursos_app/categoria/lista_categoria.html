@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Listado de Categorias</title>
+{% endblock %}
+
+{% block script %}
+<!--script src="{% static 'js/cursos_app/provincias/provincias.js' %}"></script-->
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h3>Categorias</h3>
+        <br>
+
+        <table id="categoria" class="table table-hover dt-left">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for categoria in object_list %}
+                <tr>
+                    <td>{{ categoria.categoria_id }}</td>
+                    <td>{{ categoria.n_categoria }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Categoria</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="container my-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for categoria in object_list %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            {{ categoria.categoria_id }} {{ categoria.n_categoria }} 
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ categoria.n_categoria }}</h5>
+                            <ul>
+                                <li>ID: {{ categoria.categoria_id }}</li>
+                                <li>Nombre: {{ categoria.n_categoria }}</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-footer text-body-secondary">
+                            {{ categoria.n_categoria }}
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-header">Categoria</div>
+                        <div class="card-body">
+                            <h5 class="card-title">No hay datos</h5>
+                            <p class="card-text">No se han encontrado categorias.</p>
+                        </div>
+                        <div class="card-footer text-body-secondary">Categoria</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

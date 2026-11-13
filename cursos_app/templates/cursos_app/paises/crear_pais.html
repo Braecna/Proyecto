@@ -6,49 +6,85 @@
 {% endblock %}
 
 {% block script %}
-
+<script src="{% static 'js/cursos_app/paises/paises.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-    <h1>Agregar Pais</h1>
+<h1>Agregar Pais</h1>
+<br>
+
+<form action="" method="post">
+    <div class="row">
+        <div class="col">
+            <label for="pais_id" class="form-label">ID:</label>
+            <input type="text" class="form-control" id="pais_id" name="pais_id" value="ID Pais...">
+        </div>
+
+        <div class="col">
+            <label for="nombre_pais" class="form-label">Pais:</label>
+            <input type="text" class="form-control" id="nombre_pais" name="nombre_pais" value="Nombre Pais...">
+        </div>
+    </div>
     <br>
+</form>
+<table id="paises" class="table table-hover dt-left">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre País</th>
+        </tr>
+    </thead>
 
-    <form action="" method="post">
-        <div class="row">
-            <div class="col">
-                <label for="pais_id" class="form-label">ID:</label>
-                <input type="text" class="form-control" id="pais_id" name="pais_id" value="ID Pais...">
-            </div>
+    <tbody>
+        {% for pais in object_list %}
+        <tr>
+            <td>{{ pais.pais_id }}</td>
+            <td>{{ pais.nombre_pais }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
 
-            <div class="col">
-                <label for="nombre_pais" class="form-label">Pais:</label>
-                <input type="url" class="form-control" id="nombre_pais" name="nombre_pais" value="Nombre Pais...">
+    <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Nombre País</th>
+        </tr>
+    </tfoot>
+</table>
+<div class="container my-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for pais in object_list %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header">
+                    {{ pais.pais_id }} {{ pais.nombre_pais }} 
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ pais.nombre_pais }}</h5>
+                    <ul>
+                        <li>ID: {{ pais.pais_id }}</li>
+                        <li>Provincia: {{ pais.nombre_pais }}</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer text-body-secondary">
+                    {{ pais.nombre_pais }}
+                </div>
             </div>
         </div>
-        <br>
-    </form>
-    <table id="paises" class="table table-hover dt-left">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre País</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {% for pais in object_list %}
-                <tr>
-                    <td>{{ pais.pais_id }}</td>
-                    <td>{{ pais.nombre_pais }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-
-            <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre País</th>
-                </tr>
-            </tfoot>
-        </table>
+        {% empty %}
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-header">País</div>
+                <div class="card-body">
+                    <h5 class="card-title">No hay datos</h5>
+                    <p class="card-text">No se han encontrado Países.</p>
+                </div>
+                <div class="card-footer text-body-secondary">País</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

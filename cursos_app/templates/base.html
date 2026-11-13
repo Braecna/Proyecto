@@ -33,14 +33,15 @@
             <div class="collapse navbar-collapse" id="menuNavegacion">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
-                    <a class="nav-link" href="#">Clientes</a>
-                    <a class="nav-link" href="#">Cursos</a>
-                    <a class="nav-link" href="#">Pais</a>
-                    <a class="nav-link" href="#">Provincias</a>
+                    <a class="nav-link" href="{% url 'lista_usuario' %}">Clientes</a>
+                    <a class="nav-link" href="{% url 'lista_curso' %}">Cursos</a>
+                    <a class="nav-link" href="{% url 'lista_pais' %}">Pais</a>
+                    <a class="nav-link" href="{% url 'lista_region' %}">Region</a>
+                    <a class="nav-link" href="{% url 'lista_provincia' %}">Provincias</a>
                     <a class="nav-link" href="#">Idiomas</a>
                     <a class="nav-link" href="#">Inscripciones</a>
                     <a class="nav-link" href="#">Encargados</a>
-                    <a class="nav-link" href="#">Categorías</a>
+                    <a class="nav-link" href="{% url 'lista_categoria' %}">Categorías</a>
                 </div>
             </div>
         </div>
